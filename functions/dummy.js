@@ -1,1 +1,0 @@
-// Ini nanti tempat functions
