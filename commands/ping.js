@@ -10,5 +10,6 @@ module.exports = {
   // Method isi Command "ping"
   async execute(interaction) {
     await interaction.reply("Pong!");
+    await interaction.followUp("with slash(/) ping.");
   },
 };
