@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Bot untuk server discord SITCOM",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sitcomsmanda/sitcom-discord-bot.git"
