@@ -20,7 +20,7 @@ const client = new Discord.Client({
 
 /**
  *
- *!    MEMBACA DIREKTORI ./commands
+ *!    MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
  *
  **/
 
@@ -48,6 +48,12 @@ for (const file of commandFiles) {
   // Memasukan hanya property data yang diubah JSON ke dalam array commands
   commands.push(command.data.toJSON());
 }
+
+/**
+ *
+ *!    MEMBACA DIREKTORI ./events (EVENTS HANDLER)
+ *
+ **/
 
 // Variabel alamat direktori ./events
 const eventsPath = path.join(__dirname, "events");
