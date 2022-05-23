@@ -43,7 +43,7 @@ Functions.handle_files("events").forEach((event) => {
 });
 
 // Server ID
-const guildId = "912507318464299009";
+const guildId = "902004102001729588";
 
 /**
  *! Mengirim Commands menuju Discord API

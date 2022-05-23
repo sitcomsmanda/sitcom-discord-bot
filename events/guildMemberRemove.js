@@ -7,7 +7,7 @@ module.exports = {
   async execute(member) {
     console.log(member.guild.channels);
     member.guild.channels.cache
-      .get("912507318929858600")
+      .get("902004102974828606")
       .send(`Selamat tinggal ${member.user}!`);
   },
 };

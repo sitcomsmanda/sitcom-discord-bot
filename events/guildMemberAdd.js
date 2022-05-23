@@ -72,7 +72,7 @@ module.exports = {
         iconURL: `${member.user.displayAvatarURL()}`,
       });
 
-    member.guild.channels.cache.get("912507318929858600").send({
+    member.guild.channels.cache.get("902004102974828606").send({
       content: `Selamat datang ${member.user}!`,
       embeds: [welcomeEmbed],
       files: [attachment],
