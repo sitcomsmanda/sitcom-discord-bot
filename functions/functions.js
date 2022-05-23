@@ -33,7 +33,13 @@ module.exports = {
   },
 
   // !Fungsi deploy commands ke API Discord
-  async deploy_commands(commands, token, clientId, guildId, mode = undefined) {
+  async deploy_commands(
+    commands,
+    token,
+    clientId,
+    mode = "dev",
+    guildId = undefined
+  ) {
     // Inisialisasi object RESTful API version dengan token
     const rest = new REST({ option: "9" }).setToken(token);
 

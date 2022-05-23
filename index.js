@@ -22,7 +22,7 @@ client.commands = new Discord.Collection();
 const commands = [];
 
 /**
- *!    MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
+ *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
  **/
 Functions.handle_files("commands").forEach((command) => {
   client.commands.set(command.data.name, command);
@@ -30,7 +30,7 @@ Functions.handle_files("commands").forEach((command) => {
 });
 
 /**
- *!    MEMBACA DIREKTORI ./events (EVENTS HANDLER)
+ *! MEMBACA DIREKTORI ./events (EVENTS HANDLER)
  **/
 Functions.handle_files("events").forEach((event) => {
   if (event.once) {
@@ -45,7 +45,17 @@ Functions.handle_files("events").forEach((event) => {
 // Server ID
 const guildId = "912507318464299009";
 
-// Input Commands ke dalam Discord API
-Functions.deploy_commands(commands, config.token, config.clientId, guildId);
+/**
+ *! Mengirim Commands menuju Discord API
+ *      argument "dev" menyatakan sedang dalam proses development
+ *      jadi commands dikirim hanya ke guildId yang tertera
+ **/
+Functions.deploy_commands(
+  commands,
+  config.token,
+  config.clientId,
+  "dev",
+  guildId
+);
 
 client.login(config.token);
