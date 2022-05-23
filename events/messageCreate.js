@@ -9,23 +9,20 @@ module.exports = {
     const prefix = `$`;
     if (!message.content[0] === prefix) return;
 
-    const welcomeEmbed = new MessageEmbed()
-      .setColor("#07C966")
-      .setTitle(`Halo ${message.author.username}!`)
-      .setDescription(
-        `Selamat datang di server discord\n**SITCOM** (Student IT Community)\n\nDiharapkan untuk membaca **Peraturan** di <#978124379013644298> terlebih dahulu!\n\nDilanjutkan ke <#978124379013644298> untuk berkenalan sesuai format.\n\nJika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__`
-      )
-      .setImage(message.author.avatarURL({ size: 256 }))
-      .setTimestamp()
-      .setFooter({
-        text: `${message.author.username}`,
-        iconURL: `${message.author.avatarURL({ size: 64 })}`,
-      });
-
     if (message.content.substring(0) === `${prefix}ping`) {
-      console.log(message.client.user);
-      const reply = `Selamat datang <@${message.author.id}>!`;
-      await message.reply({ content: reply, embeds: [welcomeEmbed] });
+      const embed = new MessageEmbed()
+        .setTitle("Calculating ping...")
+        .setColor("#ffda00");
+
+      message.channel.send({ embeds: [embed] }).then((msg) => {
+        const ping = msg.createdTimestamp - message.createdTimestamp;
+        const embed2 = new MessageEmbed()
+          .setTitle(
+            `Your latency: ${ping}ms, \nAPI Latency: ${message.client.ws.ping}ms`
+          )
+          .setColor("#07C966");
+        msg.edit({ embeds: [embed2] });
+      });
     }
   },
 };
