@@ -25,11 +25,14 @@
     "@napi-rs/canvas": "^0.1.21",
     "discord-api-types": "^0.33.0",
     "discord.js": "^13.7.0",
-    "express": "^4.18.1",
     "undici": "^5.2.0"
   },
   "devDependencies": {
+    "body-parser": "^1.20.0",
     "eslint": "^8.16.0",
-    "nodemon": "^2.0.16"
+    "express": "^4.18.1",
+    "netlify-lambda": "^2.0.15",
+    "nodemon": "^2.0.16",
+    "serverless-http": "^3.0.1"
   }
 }
