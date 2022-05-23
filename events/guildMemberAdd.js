@@ -49,10 +49,14 @@ module.exports = {
     // gambar rectangle (persegi) dengan dimensi se canvas
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
-    // gambar font warna putih dengan name
-    context.font = applyText(canvas, name);
+    context.font = "28px sans-serif";
     context.fillStyle = "#ffffff";
-    context.fillText(name, canvas.width / 2.5, canvas.height / 1.8);
+    context.fillText("Welcome,", canvas.width / 2.5, canvas.height / 3.5);
+
+    // gambar font warna putih dengan name
+    context.font = applyText(canvas, `${name}!`);
+    context.fillStyle = "#ffffff";
+    context.fillText(`${name}!`, 25, canvas.height / 1.8);
 
     // Use the helpful Attachment class structure to process the file for you
     const attachment = new MessageAttachment(
