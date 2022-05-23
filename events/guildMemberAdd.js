@@ -1,24 +1,8 @@
 const { MessageEmbed, MessageAttachment } = require("discord.js");
+const Functions = require("../functions/functions.js");
 // Memasukan Canvas
 const Canvas = require("@napi-rs/canvas");
 const { readFile } = require("fs/promises");
-
-// Handle untuk panjang nama yang kegedean
-const applyText = (canvas, text) => {
-  const context = canvas.getContext("2d");
-
-  // deklarasi ukuran font awal
-  let fontSize = 70;
-
-  do {
-    // masukan font ke context dan decrease
-    context.font = `${(fontSize -= 10)}px sans-serif`;
-    // Bandingkan lebar pixel text ke canvas dan dikurangin ukuran avatar
-  } while (context.measureText(text).width > canvas.width - 300);
-
-  // balikan hasilnya ke canvas
-  return context.font;
-};
 
 // Distribusi module events dengan nama event "guildMemberAdd"
 // Yaitu ketika ada member masuk server
@@ -29,10 +13,10 @@ module.exports = {
   async execute(member) {
     console.log(member.user);
 
-    const name = member.user.username;
+    let name = member.user.username;
 
     // Bikin canvas
-    const canvas = Canvas.createCanvas(720, 404);
+    const canvas = Canvas.createCanvas(960, 540);
     const context = canvas.getContext("2d");
 
     // Masukin background
@@ -43,23 +27,31 @@ module.exports = {
     // Simpen gambar sesuai ukuran canvas
     context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-    // warna untuk stroke
-    context.strokeStyle = "#07C966";
+    if (name.length > 15) name = name.slice(0, 15) + "...";
 
-    // gambar rectangle (persegi) dengan dimensi se canvas
-    context.strokeRect(0, 0, canvas.width, canvas.height);
+    // Set fonts
+    context.strokeStyle = "rgb(35, 150, 200)";
+    context.fillStyle = "rgb(255, 255, 255)";
 
-    context.font = "28px sans-serif";
-    context.fillStyle = "#ffffff";
-    context.fillText("Welcome,", 25, 125);
-    context.font = "28px sans-serif";
-    context.fillStyle = "#ffffff";
-    context.fillText("Enjoy your stay!", 25, 300);
-
-    // gambar font warna putih dengan name
-    context.font = applyText(canvas, `${name}!`);
-    context.fillStyle = "#ffffff";
-    context.fillText(`${name}`, 25, canvas.height / 1.8);
+    // Draw text
+    Functions.drawMultilineText(
+      context,
+      `Welcome, \n ${name} \n Enjoy your stay!`,
+      {
+        rect: {
+          x: 75,
+          y: 90,
+          width: 615,
+          height: 404,
+        },
+        font: "Bebas Neue",
+        verbose: false,
+        lineHeight: 1,
+        minFontSize: 100,
+        maxFontSize: 100,
+        fillStroke: true,
+      }
+    );
 
     // Use the helpful Attachment class structure to process the file for you
     const attachment = new MessageAttachment(
