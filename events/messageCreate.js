@@ -9,7 +9,7 @@ module.exports = {
     const prefix = `$`;
     if (!message.content[0] === prefix) return;
 
-    const exampleEmbed = new MessageEmbed()
+    const welcomeEmbed = new MessageEmbed()
       .setColor("#07C966")
       .setTitle(`Halo ${message.author.username}!`)
       .setDescription(
@@ -25,7 +25,7 @@ module.exports = {
     if (message.content.substring(0) === `${prefix}ping`) {
       console.log(message.client.user);
       const reply = `Selamat datang <@${message.author.id}>!`;
-      await message.reply({ content: reply, embeds: [exampleEmbed] });
+      await message.reply({ content: reply, embeds: [welcomeEmbed] });
     }
   },
 };
