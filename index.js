@@ -1,6 +1,9 @@
 // Memasukan Discord Module/Package
 const Discord = require("discord.js");
 
+// Memasukan server module
+const keepAlive = require("./server.js");
+
 // Memasukan Functions
 const Functions = require("./functions/functions.js");
 // Memasukan config file yang berisi token dan guildId
@@ -58,4 +61,5 @@ Functions.deploy_commands(
   guildId
 );
 
+keepAlive();
 client.login(config.token);
