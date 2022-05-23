@@ -1,10 +1,14 @@
+// Memasukan dotenv config
+require("dotenv").config();
+
 // Memasukan Discord Module/Package
 const Discord = require("discord.js");
 
 // Memasukan Functions
 const Functions = require("./functions/functions.js");
 // Memasukan config file yang berisi token dan guildId
-const config = require("./config.json");
+const TOKEN = process.env.TOKEN;
+const CLIENT_ID = process.env.CLIENT_ID;
 
 // Inisialisasi object client utama
 const client = new Discord.Client({
@@ -43,19 +47,13 @@ Functions.handle_files("events").forEach((event) => {
 });
 
 // Server ID
-const guildId = "902004102001729588";
+const GUILD_ID = "902004102001729588";
 
 /**
  *! Mengirim Commands menuju Discord API
  *      argument "dev" menyatakan sedang dalam proses development
  *      jadi commands dikirim hanya ke guildId yang tertera
  **/
-Functions.deploy_commands(
-  commands,
-  config.token,
-  config.clientId,
-  "dev",
-  guildId
-);
+Functions.deploy_commands(commands, TOKEN, CLIENT_ID, "dev", GUILD_ID);
 
-client.login(config.token);
+client.login(TOKEN);
