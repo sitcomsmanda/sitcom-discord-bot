@@ -63,7 +63,7 @@ module.exports = {
       .setColor("#07C966")
       .setTitle(`Halo ${member.user.username}!`)
       .setDescription(
-        `Selamat datang di server discord\n**SITCOM** (Student IT Community)\n\nDiharapkan untuk membaca **Peraturan** di <#978124379013644298> terlebih dahulu!\n\nDilanjutkan ke <#978124379013644298> untuk berkenalan sesuai format.\n\nJika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__`
+        `Selamat datang di server discord\n**SITCOM** (Student IT Community)\n\nDiharapkan untuk membaca **Peraturan** di <#902006311967928411> terlebih dahulu!\n\nDilanjutkan ke <#902096654444920872> untuk berkenalan sesuai format.\n\nJika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__`
       )
       .setImage("attachment://welcome.png")
       .setTimestamp()
