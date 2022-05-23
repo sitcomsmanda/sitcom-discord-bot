@@ -4,7 +4,8 @@
   "description": "Bot untuk server discord SITCOM",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ."
+    "dev": "nodemon .",
+    "build": "netlify-lambda build express"
   },
   "repository": {
     "type": "git",
