@@ -54,6 +54,6 @@ const GUILD_ID = "902004102001729588";
  *      argument "dev" menyatakan sedang dalam proses development
  *      jadi commands dikirim hanya ke guildId yang tertera
  **/
-Functions.deploy_commands(commands, TOKEN, CLIENT_ID, "dev", GUILD_ID);
+Functions.deploy_commands(commands, TOKEN, CLIENT_ID, "build", GUILD_ID);
 
 client.login(TOKEN);
