@@ -9,6 +9,13 @@ module.exports = {
     const prefix = `$`;
     if (!message.content[0] === prefix) return;
 
+    if (message.content.substring(0) === `${prefix}help`) {
+      const embed = new MessageEmbed()
+        .setTitle("Belum jadi cuy...")
+        .setColor("#07C966");
+      message.channel.send({ embeds: [embed] });
+    }
+
     if (message.content.substring(0) === `${prefix}ping`) {
       const embed = new MessageEmbed()
         .setTitle("Calculating ping...")
