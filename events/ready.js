@@ -5,7 +5,16 @@ module.exports = {
   // kondisi once
   once: true,
   // Method isi Events ready
-  async execute() {
-    console.log(`SITCOM is ready.`);
+  async execute(client) {
+    const activity = "$help";
+    const type = "LISTENING";
+    const status = "dnd";
+    client.user.setPresence({
+      activities: [{ name: activity, type: type }],
+      status: status,
+    });
+    console.log(
+      `SITCOM is ready.\nactivites: "${activity}", status: ${status}`
+    );
   },
 };
