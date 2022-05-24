@@ -16,10 +16,9 @@ module.exports = {
 
       message.channel.send({ embeds: [embed] }).then((msg) => {
         const ping = msg.createdTimestamp - message.createdTimestamp;
-        console.log(message.client);
         const embed2 = new MessageEmbed()
           .setTitle(
-            `${message.author.username} latency: ${ping}ms\n${message.client.user.username} latency: ${message.client.ws.ping}ms`
+            `${message.author.username} latency: ${ping} ms\n${message.client.user.username} latency: ${message.client.ws.ping} ms`
           )
           .setColor("#07C966");
         msg.edit({ embeds: [embed2] });
