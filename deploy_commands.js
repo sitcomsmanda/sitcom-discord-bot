@@ -23,11 +23,14 @@ const deploy_commands = async () => {
 
   try {
     console.log("Started refreshing application (/) commands.");
-    await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
-      body: commands,
-    });
+    const res = await rest.put(
+      Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
+      {
+        body: commands,
+      }
+    );
     console.log("Successfully reloaded application (/) commands.");
-    return rest;
+    return res;
   } catch (error) {
     console.error(error);
     return false;
@@ -57,4 +60,4 @@ const deploy_commands = async () => {
   // }
 };
 
-module.exports = deploy_commands;
+deploy_commands();

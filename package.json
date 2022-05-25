@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon .",
     "start": "node index.js",
-    "deploy": "node ./modules/deploy_commands.js",
-    "remove": "node ./modules/remove_commands.js"
+    "deploy": "node deploy_commands.js",
+    "remove": "node remove_commands.js"
   },
   "repository": {
     "type": "git",
