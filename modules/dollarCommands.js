@@ -11,8 +11,8 @@ const dollarCommands = (message) => {
 
   if (message.content.substring(0) === `${PREFIX}help`) {
     const title = `Rentetan Perintah Dolar ${Builders.quote("$")}`;
-    const $ping = `${Builders.quote("$ping")} untuk melihat latensi.`;
-    const $materi = `${Builders.quote(
+    const $ping = `${Builders.inlineCode("$ping")} untuk melihat latensi.`;
+    const $materi = `${Builders.inlineCode(
       "$materi"
     )} untuk melihat rentetan materi di gdrive.`;
     const embed = new MessageEmbed()
@@ -23,10 +23,9 @@ const dollarCommands = (message) => {
   }
 
   if (message.content.substring(0) === `${PREFIX}materi`) {
-    const url =
-      "https://drive.google.com/drive/folders/1tuo6zoewZ0f1t4KDuFiHviVRTQplnd3n?usp=sharing";
-    const link = Builders.hyperlink("disini", url);
-    message.channel.send({ content: `📁 klik ${link}.` });
+    message.channel.send(
+      `📁 https://drive.google.com/drive/folders/1tuo6zoewZ0f1t4KDuFiHviVRTQplnd3n?usp=sharing`
+    );
   }
 
   if (message.content.substring(0) === `${PREFIX}ping`) {
