@@ -1,5 +1,5 @@
 const { MessageEmbed, MessageAttachment } = require("discord.js");
-const Functions = require("../functions/functions.js");
+const Functions = require("../modules/functions.js");
 // Memasukan Canvas
 const Canvas = require("@napi-rs/canvas");
 const { readFile } = require("fs/promises");
