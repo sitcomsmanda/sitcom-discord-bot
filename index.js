@@ -5,10 +5,9 @@ require("dotenv").config();
 const Discord = require("discord.js");
 
 // Memasukan Functions
-const Functions = require("./functions/functions.js");
-// Memasukan config file yang berisi token dan guildId
+const { handle_files } = require("./modules/functions.js");
+// Memasukan config file yang berisi token
 const TOKEN = process.env.TOKEN;
-const CLIENT_ID = process.env.CLIENT_ID;
 
 // Inisialisasi object client utama
 const client = new Discord.Client({
@@ -28,7 +27,7 @@ const commands = [];
 /**
  *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
  **/
-Functions.handle_files("commands").forEach((command) => {
+handle_files("commands").forEach((command) => {
   client.commands.set(command.data.name, command);
   commands.push(command.data.toJSON());
 });
@@ -36,7 +35,7 @@ Functions.handle_files("commands").forEach((command) => {
 /**
  *! MEMBACA DIREKTORI ./events (EVENTS HANDLER)
  **/
-Functions.handle_files("events").forEach((event) => {
+handle_files("events").forEach((event) => {
   if (event.once) {
     // Jika tipe event adalah once
     client.once(event.name, (...args) => event.execute(...args));
@@ -45,15 +44,5 @@ Functions.handle_files("events").forEach((event) => {
     client.on(event.name, (...args) => event.execute(...args));
   }
 });
-
-// Server ID
-const GUILD_ID = "902004102001729588";
-
-/**
- *! Mengirim Commands menuju Discord API
- *      argument "dev" menyatakan sedang dalam proses development
- *      jadi commands dikirim hanya ke guildId yang tertera
- **/
-Functions.deploy_commands(commands, TOKEN, CLIENT_ID, "build", GUILD_ID);
 
 client.login(TOKEN);
