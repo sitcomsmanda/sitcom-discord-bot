@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { MessageEmbed } = require("discord.js");
+const Builders = require("@discordjs/builders");
 
 // const CLIENT_ID = process.env.CLIENT_ID;
 // const GUILD_ID = process.env.GUILD_ID;
@@ -9,10 +10,23 @@ const dollarCommands = (message) => {
   if (!message.content[0] === PREFIX) return;
 
   if (message.content.substring(0) === `${PREFIX}help`) {
+    const title = `Rentetan Perintah Dolar ${Builders.quote("$")}`;
+    const $ping = `${Builders.quote("$ping")} untuk melihat latensi.`;
+    const $materi = `${Builders.quote(
+      "$materi"
+    )} untuk melihat rentetan materi di gdrive.`;
     const embed = new MessageEmbed()
-      .setTitle("Belum jadi cuy...")
+      .setTitle(title)
+      .setDescription(`${$ping}\n${$materi}\n\nBaru sedikit cuy, 😥`)
       .setColor("#07C966");
     message.channel.send({ embeds: [embed] });
+  }
+
+  if (message.content.substring(0) === `${PREFIX}materi`) {
+    const url =
+      "https://drive.google.com/drive/folders/1tuo6zoewZ0f1t4KDuFiHviVRTQplnd3n?usp=sharing";
+    const link = Builders.hyperlink("disini", url);
+    message.channel.send({ content: `📁 klik ${link}.` });
   }
 
   if (message.content.substring(0) === `${PREFIX}ping`) {
