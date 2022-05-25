@@ -21,15 +21,11 @@ const client = new Discord.Client({
 // Membuat property commands yang isinya object Collection
 client.commands = new Discord.Collection();
 
-// Array kosong penampung commands
-const commands = [];
-
 /**
  *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
  **/
 handle_files("commands").forEach((command) => {
   client.commands.set(command.data.name, command);
-  commands.push(command.data.toJSON());
 });
 
 /**
