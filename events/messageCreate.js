@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const dollarsCommands = require("../modules/dollars_commands.js");
 
 // Distribusi module events dengan nama event "messageCreate"
 module.exports = {
@@ -6,30 +6,7 @@ module.exports = {
   name: "messageCreate",
   // Method isi Events messageCreate
   async execute(message) {
-    const prefix = `$`;
-    if (!message.content[0] === prefix) return;
-
-    if (message.content.substring(0) === `${prefix}help`) {
-      const embed = new MessageEmbed()
-        .setTitle("Belum jadi cuy...")
-        .setColor("#07C966");
-      message.channel.send({ embeds: [embed] });
-    }
-
-    if (message.content.substring(0) === `${prefix}ping`) {
-      const embed = new MessageEmbed()
-        .setTitle("Calculating ping...")
-        .setColor("#ffda00");
-
-      message.channel.send({ embeds: [embed] }).then((msg) => {
-        const ping = msg.createdTimestamp - message.createdTimestamp;
-        const embed2 = new MessageEmbed()
-          .setTitle(
-            `${message.author.username} latency: ${ping} ms\n${message.client.user.username} latency: ${message.client.ws.ping} ms`
-          )
-          .setColor("#07C966");
-        msg.edit({ embeds: [embed2] });
-      });
-    }
+    // Panggil modules untuk dollars commands "$"
+    dollarsCommands(message);
   },
 };
