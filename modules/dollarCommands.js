@@ -6,8 +6,8 @@ const Builders = require("@discordjs/builders");
 // const GUILD_ID = process.env.GUILD_ID;
 const PREFIX = process.env.PREFIX;
 
-const dollarCommands = (message) => {
-  if (!message.content[0] === PREFIX) return;
+const dollarCommands = async (message) => {
+  if (message.content[0] !== PREFIX) return;
 
   if (message.content.substring(0) === `${PREFIX}help`) {
     const title = `Rentetan Perintah Dolar ${Builders.quote("$")}`;
@@ -20,12 +20,14 @@ const dollarCommands = (message) => {
       .setDescription(`${$ping}\n${$materi}\n\nBaru sedikit cuy, 😥`)
       .setColor("#07C966");
     message.channel.send({ embeds: [embed] });
+    return;
   }
 
   if (message.content.substring(0) === `${PREFIX}materi`) {
     message.channel.send(
       `📁 https://drive.google.com/drive/folders/1tuo6zoewZ0f1t4KDuFiHviVRTQplnd3n?usp=sharing`
     );
+    return;
   }
 
   if (message.content.substring(0) === `${PREFIX}ping`) {
@@ -41,11 +43,13 @@ const dollarCommands = (message) => {
         )
         .setColor("#07C966");
       msg.edit({ embeds: [embed2] });
+      return;
     });
   }
 
   if (message.content !== `❓ Coba ketik ${Builders.inlineCode(`$help`)}.`) {
     message.channel.send(`❓ Coba ketik ${Builders.inlineCode(`$help`)}.`);
+    return;
   }
 };
 
