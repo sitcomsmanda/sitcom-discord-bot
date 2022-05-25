@@ -44,7 +44,9 @@ const dollarCommands = (message) => {
     });
   }
 
-  message.channel.send(`❓ Coba ketik ${Builders.inlineCode(`$help`)}.`);
+  if (message.content !== `❓ Coba ketik ${Builders.inlineCode(`$help`)}.`) {
+    message.channel.send(`❓ Coba ketik ${Builders.inlineCode(`$help`)}.`);
+  }
 };
 
 module.exports = dollarCommands;
