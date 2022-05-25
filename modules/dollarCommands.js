@@ -5,7 +5,7 @@ const { MessageEmbed } = require("discord.js");
 // const GUILD_ID = process.env.GUILD_ID;
 const PREFIX = process.env.PREFIX;
 
-const dollarsCommands = (message) => {
+const dollarCommands = (message) => {
   if (!message.content[0] === PREFIX) return;
 
   if (message.content.substring(0) === `${PREFIX}help`) {
@@ -32,4 +32,4 @@ const dollarsCommands = (message) => {
   }
 };
 
-module.exports = dollarsCommands;
+module.exports = dollarCommands;

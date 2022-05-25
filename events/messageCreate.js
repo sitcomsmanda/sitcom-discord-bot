@@ -1,4 +1,4 @@
-const dollarsCommands = require("../modules/dollarsCommands.js");
+const dollarCommands = require("../modules/dollarCommands.js");
 
 // Distribusi module events dengan nama event "messageCreate"
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
   name: "messageCreate",
   // Method isi Events messageCreate
   async execute(message) {
-    // Panggil modules untuk dollars commands "$"
-    dollarsCommands(message);
+    // Panggil modules untuk dollar commands "$"
+    dollarCommands(message);
   },
 };
