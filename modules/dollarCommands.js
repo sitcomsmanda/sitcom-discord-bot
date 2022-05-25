@@ -43,6 +43,8 @@ const dollarCommands = (message) => {
       msg.edit({ embeds: [embed2] });
     });
   }
+
+  message.channel.send(`❓ Coba ketik ${Builders.inlineCode(`$help`)}.`);
 };
 
 module.exports = dollarCommands;
