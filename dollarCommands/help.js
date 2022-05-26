@@ -1,7 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const Builders = require("@discordjs/builders");
 
-// Distribusi module dollar command dengan nama "materi"
 module.exports = {
   data: {
     name: "materi",
