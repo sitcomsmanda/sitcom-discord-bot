@@ -6,7 +6,7 @@ const Builders = require("@discordjs/builders");
 // const GUILD_ID = process.env.GUILD_ID;
 const PREFIX = process.env.PREFIX;
 
-const dollarCommands = async (message) => {
+const dollarCommands = (message) => {
   if (message.content[0] !== PREFIX) return;
 
   if (message.content.substring(0) === `${PREFIX}help`) {
@@ -45,11 +45,6 @@ const dollarCommands = async (message) => {
       msg.edit({ embeds: [embed2] });
       return;
     });
-  }
-
-  if (message.content !== `❓ Coba ketik ${Builders.inlineCode(`$help`)}.`) {
-    message.channel.send(`❓ Coba ketik ${Builders.inlineCode(`$help`)}.`);
-    return;
   }
 };
 
