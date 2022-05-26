@@ -16,7 +16,7 @@ module.exports = {
       .setTitle(title)
       .setDescription(`${$ping}\n${$materi}\n\nBaru sedikit cuy, 😥`)
       .setColor("#07C966");
-    message.channel.send({ embeds: [embed] });
+    await message.channel.send({ embeds: [embed] });
     return;
   },
 };
