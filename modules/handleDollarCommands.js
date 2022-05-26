@@ -3,7 +3,7 @@ require("dotenv").config();
 const PREFIX = process.env.PREFIX;
 
 // Fungsi Dolar Utama yang dipanggil di messageCreate Event
-const dollarCommands = (message) => {
+const handleDollarCommands = (message) => {
   // Pencegah masuk function tanpa PREFIX
   if (!(message.content[0] === PREFIX)) return;
 
@@ -24,4 +24,4 @@ const dollarCommands = (message) => {
   return;
 };
 
-module.exports = dollarCommands;
+module.exports = handleDollarCommands;
