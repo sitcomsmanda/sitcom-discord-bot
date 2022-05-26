@@ -7,7 +7,9 @@ const Builders = require("@discordjs/builders");
 const PREFIX = process.env.PREFIX;
 
 const dollarCommands = (message) => {
-  if (message.content[0] !== PREFIX) return;
+  if (!(message.content[0] === PREFIX)) return;
+
+  console.log(`${message.author.username}: ${message.content}`);
 
   if (message.content.substring(0) === `${PREFIX}help`) {
     const title = `Rentetan Perintah Dolar ${Builders.quote("$")}`;
@@ -46,6 +48,7 @@ const dollarCommands = (message) => {
       return;
     });
   }
+  return;
 };
 
 module.exports = dollarCommands;
