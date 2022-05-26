@@ -6,11 +6,13 @@ const Builders = require("@discordjs/builders");
 // const GUILD_ID = process.env.GUILD_ID;
 const PREFIX = process.env.PREFIX;
 
+// Fungsi Dolar Utama yang dipanggil di messageCreate Event
 const dollarCommands = (message) => {
   if (!(message.content[0] === PREFIX)) return;
 
   console.log(`${message.author.username}: ${message.content}`);
 
+  // $help command
   if (message.content.substring(0) === `${PREFIX}help`) {
     const title = `Rentetan Perintah Dolar ${Builders.quote("$")}`;
     const $ping = `${Builders.inlineCode("$ping")} untuk melihat latensi.`;
@@ -25,6 +27,7 @@ const dollarCommands = (message) => {
     return;
   }
 
+  // $materi command
   if (message.content.substring(0) === `${PREFIX}materi`) {
     message.channel.send(
       `📁 https://drive.google.com/drive/folders/1tuo6zoewZ0f1t4KDuFiHviVRTQplnd3n?usp=sharing`
@@ -32,6 +35,7 @@ const dollarCommands = (message) => {
     return;
   }
 
+  // $ping command
   if (message.content.substring(0) === `${PREFIX}ping`) {
     const embed = new MessageEmbed()
       .setTitle("Calculating ping...")
