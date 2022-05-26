@@ -8,6 +8,7 @@ const Discord = require("discord.js");
 const { handle_files } = require("./modules/functions.js");
 // Memasukan config file yang berisi token
 const TOKEN = process.env.TOKEN;
+const PREFIX = process.env.PREFIX;
 
 // Inisialisasi object client utama
 const client = new Discord.Client({
@@ -20,12 +21,23 @@ const client = new Discord.Client({
 
 // Membuat property commands yang isinya object Collection
 client.commands = new Discord.Collection();
+// Membuat property dollarCommands yang isinya object Collection
+client.dollarCommands = new Discord.Collection();
 
 /**
  *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
  **/
 handle_files("commands").forEach((command) => {
   client.commands.set(command.data.name, command);
+});
+
+/**
+ *! MEMBACA DIREKTORI ./dollarCommands (DOLLAR COMMANDS HANDLER)
+ **/
+handle_files("dollarCommands").forEach((dollarCommand) => {
+  const commandName = dollarCommand.data.name;
+  dollarCommand.data.name = PREFIX + commandName;
+  client.dollarCommands.set(dollarCommand.data.name, dollarCommand);
 });
 
 /**
