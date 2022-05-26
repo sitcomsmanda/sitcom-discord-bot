@@ -2,6 +2,7 @@
 module.exports = {
   data: {
     name: "materi",
+    desc: "melihat link materi",
   },
   async execute(message) {
     await message.channel.send(
