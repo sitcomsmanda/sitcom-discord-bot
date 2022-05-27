@@ -13,12 +13,17 @@ module.exports = {
 
     await message.channel.send({ embeds: [embed] }).then((msg) => {
       const ping = msg.createdTimestamp - message.createdTimestamp;
-      const embed2 = new MessageEmbed()
-        .setTitle(
-          `${message.author.username} latency: ${ping} ms\n${message.client.user.username} latency: ${message.client.ws.ping} ms`
-        )
-        .setColor("#07C966");
-      msg.edit({ embeds: [embed2] });
+      if (ping < 100) {
+        const embed2 = new MessageEmbed()
+          .setTitle(`${ping} ms`)
+          .setColor("GREEN");
+        msg.edit({ embeds: [embed2] });
+      } else {
+        const embed2 = new MessageEmbed()
+          .setTitle(`${ping} ms`)
+          .setColor("RED");
+        msg.edit({ embeds: [embed2] });
+      }
       return;
     });
   },
