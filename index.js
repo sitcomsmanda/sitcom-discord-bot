@@ -5,7 +5,7 @@ require("dotenv").config();
 const Discord = require("discord.js");
 
 // Memasukan Functions
-const { handle_files } = require("./modules/functions.js");
+const handleFiles = require("./modules/handleFiles.js");
 // Memasukan config file yang berisi token
 const TOKEN = process.env.TOKEN;
 const PREFIX = process.env.PREFIX;
@@ -27,14 +27,14 @@ client.dollarCommands = new Discord.Collection();
 /**
  *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
  **/
-handle_files("commands").forEach((command) => {
+handleFiles("commands").forEach((command) => {
   client.commands.set(command.data.name, command);
 });
 
 /**
  *! MEMBACA DIREKTORI ./dollarCommands (DOLLAR COMMANDS HANDLER)
  **/
-handle_files("dollarCommands").forEach((dollarCommand) => {
+handleFiles("dollarCommands").forEach((dollarCommand) => {
   const commandName = dollarCommand.data.name;
   dollarCommand.data.name = PREFIX + commandName;
   client.dollarCommands.set(dollarCommand.data.name, dollarCommand);
@@ -43,7 +43,7 @@ handle_files("dollarCommands").forEach((dollarCommand) => {
 /**
  *! MEMBACA DIREKTORI ./events (EVENTS HANDLER)
  **/
-handle_files("events").forEach((event) => {
+handleFiles("events").forEach((event) => {
   if (event.once) {
     // Jika tipe event adalah once
     client.once(event.name, (...args) => event.execute(...args));

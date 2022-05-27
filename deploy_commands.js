@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
-const { handle_files } = require("./modules/functions.js");
+const handleFiles = require("./modules/handleFiles.js");
 const TOKEN = process.env.TOKEN;
 const CLIENT_ID = process.env.CLIENT_ID;
 const GUILD_ID = process.env.GUILD_ID;
@@ -17,7 +17,7 @@ const deploy_commands = async () => {
   /**
    *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
    **/
-  handle_files("commands").forEach((command) => {
+  handleFiles("commands").forEach((command) => {
     commands.push(command.data.toJSON());
   });
 

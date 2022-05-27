@@ -1,5 +1,5 @@
 const { MessageEmbed, MessageAttachment } = require("discord.js");
-const Functions = require("../modules/functions.js");
+const drawMultilineText = require("../modules/drawMultilineText.js");
 // Memasukan Canvas
 const Canvas = require("@napi-rs/canvas");
 const { readFile } = require("fs/promises");
@@ -34,24 +34,20 @@ module.exports = {
     context.fillStyle = "rgb(255, 255, 255)";
 
     // Draw text
-    Functions.drawMultilineText(
-      context,
-      `Welcome, \n ${name} \n Enjoy your stay!`,
-      {
-        rect: {
-          x: 75,
-          y: 90,
-          width: 615,
-          height: 404,
-        },
-        font: "Bebas Neue",
-        verbose: false,
-        lineHeight: 1,
-        minFontSize: 100,
-        maxFontSize: 100,
-        fillStroke: true,
-      }
-    );
+    drawMultilineText(context, `Welcome, \n ${name} \n Enjoy your stay!`, {
+      rect: {
+        x: 75,
+        y: 90,
+        width: 615,
+        height: 404,
+      },
+      font: "Bebas Neue",
+      verbose: false,
+      lineHeight: 1,
+      minFontSize: 100,
+      maxFontSize: 100,
+      fillStroke: true,
+    });
 
     // Use the helpful Attachment class structure to process the file for you
     const attachment = new MessageAttachment(
