@@ -11,9 +11,15 @@ module.exports = {
     const client = await message.client;
     // const user = await message.author;
 
-    const seconds = Math.round(client.uptime / 1000);
-    const minutes = Math.round(seconds / 60);
-    const hours = Math.round(minutes / 60);
+    // Miliseconds to Seconds
+    const uptime = Math.floor(client.uptime / 1000);
+
+    // Format to HH,MM,SS
+    const hours = Math.floor(uptime / 3600);
+    const minutes = Math.floor((uptime - hours * 3600) / 60);
+    const seconds = uptime - hours * 3600 - minutes * 60;
+
+    console.log(client.guilds.cache.size);
 
     const embed = new MessageEmbed().setColor(`#07C966`).setFields(
       {
@@ -21,6 +27,14 @@ module.exports = {
         value: `~ ${hours ? `${hours}h,` : ``} ${
           minutes ? `${minutes}m,` : ``
         } ${seconds ? `${seconds}s` : ``}`,
+      },
+      {
+        name: `🟠 API Latency`,
+        value: `~ ${client.ws.ping}ms`,
+      },
+      {
+        name: `🔗 Servers`,
+        value: `~ ${client.guilds.cache.size}`,
       },
       {
         name: `📘 Discord.js`,
