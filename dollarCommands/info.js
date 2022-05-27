@@ -19,7 +19,9 @@ module.exports = {
     const minutes = Math.floor((uptime - hours * 3600) / 60);
     const seconds = uptime - hours * 3600 - minutes * 60;
 
-    console.log(client.guilds.cache.size);
+    const memory = process.memoryUsage().rss;
+    const megabyte = memory / 1000000;
+    const displayMemory = megabyte.toString().substring(0, 5);
 
     const embed = new MessageEmbed().setColor(`#07C966`).setFields(
       {
@@ -29,11 +31,15 @@ module.exports = {
         } ${seconds ? `${seconds}s` : ``}`,
       },
       {
+        name: `🗄️ Memory`,
+        value: `~ ${displayMemory}mb`,
+      },
+      {
         name: `🟠 API Latency`,
         value: `~ ${client.ws.ping}ms`,
       },
       {
-        name: `🔗 Servers`,
+        name: `🏘️ Servers`,
         value: `~ ${client.guilds.cache.size}`,
       },
       {
