@@ -4,7 +4,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   data: {
     name: "ping",
-    desc: "melihat latensi.",
+    desc: "melihat latensi kamu",
   },
   async execute(message) {
     const embed = new MessageEmbed()
