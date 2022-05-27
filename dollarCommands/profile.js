@@ -8,7 +8,7 @@ const GUILD_ID = process.env.GUILD_ID;
 module.exports = {
   data: {
     name: "profile",
-    desc: "mengenai bot ini",
+    desc: "riwayat akun discord kamu",
   },
   async execute(message) {
     const guild = await message.author.client.guilds.cache.get(GUILD_ID);
