@@ -68,7 +68,6 @@ module.exports = {
     ) {
       return interaction.reply({
         content: `I'm already playing music in <#${guild.me.voice.channelId}>.`,
-        ephemeral: true,
       });
     }
 
