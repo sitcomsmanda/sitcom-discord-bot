@@ -7,35 +7,35 @@ module.exports = {
     .setName("music")
     .setDescription("Music system")
     // music play
-    .addSubcommand((subcommand) => {
+    .addSubcommand((subcommand) =>
       subcommand
         .setName("play")
         .setDescription("Play a song")
-        .addStringOption((option) => {
+        .addStringOption((option) =>
           option
             .setName("query")
             .setDescription("Provide a name or a url for the song")
-            .setRequired(true);
-        });
-    })
+            .setRequired(true)
+        )
+    )
     // music volume
-    .addSubcommand((subcommand) => {
+    .addSubcommand((subcommand) =>
       subcommand
         .setName("volume")
         .setDescription("Alter the volume")
-        .addNumberOption((option) => {
+        .addNumberOption((option) =>
           option
             .setName("percent")
             .setDescription("10 - 100%")
-            .setRequired(true);
-        });
-    })
+            .setRequired(true)
+        )
+    )
     // music setting
-    .addSubcommand((subcommand) => {
+    .addSubcommand((subcommand) =>
       subcommand
         .setName("setting")
         .setDescription("Select an option")
-        .addStringOption((option) => {
+        .addStringOption((option) =>
           option
             .setName("options")
             .setDescription("Select an option")
@@ -46,9 +46,9 @@ module.exports = {
               { name: "pause", value: "pause" },
               { name: "resume", value: "resume" },
               { name: "stop", value: "stop" }
-            );
-        });
-    }),
+            )
+        )
+    ),
   async execute(interaction) {
     const { client, guild, member, channel, options } = interaction;
     const VoiceChannel = member.voice.channel;
