@@ -53,8 +53,6 @@ module.exports = {
     const { client, guild, member, channel, options } = interaction;
     const VoiceChannel = member.voice.channel;
 
-    console.log(guild.me.voice.channelId);
-
     if (!VoiceChannel) {
       return interaction.reply({
         content: `You must be in a voice channel to be able to use music command!`,
