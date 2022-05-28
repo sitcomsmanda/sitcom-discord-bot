@@ -9,6 +9,8 @@ const handleFiles = require("./modules/handleFiles.js");
 // Memasukan config file yang berisi token
 const TOKEN = process.env.TOKEN;
 const PREFIX = process.env.PREFIX;
+const CLIENT_ID_SPOTIFY = process.env.CLIENT_ID_SPOTIFY;
+const CLIENT_SECRET_SPOTIFY = process.env.CLIENT_SECRET_SPOTIFY;
 
 // Inisialisasi object client utama
 const client = new Discord.Client({
@@ -63,7 +65,16 @@ client.distube = new DisTube(client, {
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: false,
   leaveOnFinish: true,
-  plugins: [new SpotifyPlugin()],
+  plugins: [
+    new SpotifyPlugin({
+      parallel: true,
+      emitEventsAfterFetching: false,
+      api: {
+        clientId: CLIENT_ID_SPOTIFY,
+        clientSecret: CLIENT_SECRET_SPOTIFY,
+      },
+    }),
+  ],
 });
 
 module.exports = client;
