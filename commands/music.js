@@ -118,9 +118,11 @@ module.exports = {
                   `\n**${++id}**. ${song.name} - \`${song.formattedDuration}\``
               )}`;
               return interaction.reply({
-                embeds: new MessageEmbed()
-                  .setColor("#07C966")
-                  .setDescription(listSong),
+                embeds: [
+                  new MessageEmbed()
+                    .setColor("#07C966")
+                    .setDescription(listSong),
+                ],
               });
             }
           }
