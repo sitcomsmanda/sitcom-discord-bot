@@ -53,6 +53,8 @@ module.exports = {
     const { client, guild, member, channel, options } = interaction;
     const VoiceChannel = member.voice.channel;
 
+    console.log(guild.me.voice.channelId);
+
     if (!VoiceChannel) {
       return interaction.reply({
         content: `You must be in a voice channel to be able to use music command!`,
@@ -60,9 +62,12 @@ module.exports = {
       });
     }
 
-    if (guild.me.voice && VoiceChannel.id !== guild.me.voice.channel.id) {
+    if (
+      guild.me.voice.channelId &&
+      VoiceChannel.id !== guild.me.voice.channelId
+    ) {
       return interaction.reply({
-        content: `I'm already playing music in <$${guild.me.voice.channel.id}>.`,
+        content: `I'm already playing music in <#${guild.me.voice.channelId}>.`,
         ephemeral: true,
       });
     }
