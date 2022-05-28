@@ -53,4 +53,16 @@ handleFiles("events").forEach((event) => {
   }
 });
 
+/**
+ *! DisTube Init
+ **/
+const { DisTube } = require("distube");
+const { SpotifyPlugin } = require("@distube/spotify");
+client.distube = new DisTube(client, {
+  emitNewSongOnly: true,
+  emitAddSongWhenCreatingQueue: false,
+  leaveOnFinish: true,
+  plugins: [new SpotifyPlugin()],
+});
+
 client.login(TOKEN);
