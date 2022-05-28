@@ -16,6 +16,7 @@ const client = new Discord.Client({
     Discord.Intents.FLAGS.GUILDS,
     Discord.Intents.FLAGS.GUILD_MEMBERS,
     Discord.Intents.FLAGS.GUILD_MESSAGES,
+    Discord.Intents.FLAGS.GUILD_VOICE_STATES,
   ],
 });
 
@@ -64,5 +65,7 @@ client.distube = new DisTube(client, {
   leaveOnFinish: true,
   plugins: [new SpotifyPlugin()],
 });
+
+module.exports = client;
 
 client.login(TOKEN);

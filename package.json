@@ -24,7 +24,9 @@
   "homepage": "https://github.com/sitcomsmanda/sitcom-discord-bot#readme",
   "dependencies": {
     "@discordjs/builders": "^0.13.0",
+    "@discordjs/opus": "^0.5.3",
     "@discordjs/rest": "^0.4.1",
+    "@discordjs/voice": "^0.9.0",
     "@distube/spotify": "^1.2.1",
     "@distube/yt-dlp": "^1.0.2",
     "@napi-rs/canvas": "^0.1.21",
