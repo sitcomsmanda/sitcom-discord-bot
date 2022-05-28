@@ -1,5 +1,6 @@
 // Memasukan Builders Commands Discord Package
 const { SlashCommandBuilder } = require("@discordjs/builders");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -48,5 +49,88 @@ module.exports = {
             );
         });
     }),
-  async execute(interaction) {},
+  async execute(interaction) {
+    const { client, guild, member, channel, options } = interaction;
+    const VoiceChannel = member.voice.channel;
+
+    if (!VoiceChannel) {
+      return interaction.reply({
+        content: `You must be in a voice channel to be able to use music command!`,
+        ephemeral: true,
+      });
+    }
+
+    if (guild.me.voice && VoiceChannel.id !== guild.me.voice.channel.id) {
+      return interaction.reply({
+        content: `I'm already playing music in <$${guild.me.voice.channel.id}>.`,
+        ephemeral: true,
+      });
+    }
+
+    try {
+      switch (options.getSubcommand()) {
+        case "play": {
+          client.distube.play(VoiceChannel, options.getString("query"), {
+            textChannel: channel,
+            member: member,
+          });
+          return interaction.reply({ content: `🎶 Request recieved.` });
+        }
+        case "volume": {
+          const volume = options.getNumber("percent");
+          if (volume > 100 || volume < 1) {
+            return interaction.reply({
+              content: `🚫 You have to specify number between 1 and 100!`,
+            });
+          }
+          client.distube.setVolume(VoiceChannel, volume);
+          return interaction.reply({
+            content: `📶 Volume has been set to \`${volume}%\``,
+          });
+        }
+        case "setting": {
+          const queue = client.distube.getQueue(VoiceChannel);
+
+          if (!queue) {
+            return interaction.reply({ content: "🚫 There is no queue!" });
+          }
+
+          switch (options.getString("options")) {
+            case "skip": {
+              await queue.skip(VoiceChannel);
+              return interaction.reply({ content: "⏭️ Skipped." });
+            }
+            case "stop": {
+              await queue.stop(VoiceChannel);
+              return interaction.reply({ content: "⏹️ Stopped." });
+            }
+            case "pause": {
+              await queue.pause(VoiceChannel);
+              return interaction.reply({ content: "⏸️ Paused." });
+            }
+            case "resume": {
+              await queue.resume(VoiceChannel);
+              return interaction.reply({ content: "▶️ Resumed." });
+            }
+            case "queue": {
+              const listSong = `${queue.songs.map(
+                (song, id) =>
+                  `\n**${++id}**. ${song.name} - \`${song.formattedDuration}\``
+              )}`;
+              return interaction.reply({
+                embeds: new MessageEmbed()
+                  .setColor("#07C966")
+                  .setDescription(listSong),
+              });
+            }
+          }
+        }
+      }
+    } catch (error) {
+      const errorEmbed = new MessageEmbed()
+        .setColor("RED")
+        .setDescription(`🚫 Alert: ${error}`);
+      return interaction.reply({ embeds: [errorEmbed] });
+    }
+  },
 };
