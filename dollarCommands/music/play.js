@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
   data: {
     name: "play",
@@ -10,13 +12,25 @@ module.exports = {
 
     if (!query) {
       return message.channel.send({
-        content: `Tolong masukan format pencarian yang benar! \`$play nama-musik\``,
+        embeds: [
+          new MessageEmbed()
+            .setColor("YELLOW")
+            .setDescription(
+              `Tolong masukan format pencarian yang benar!\n\`$play nama-musik\``
+            ),
+        ],
       });
     }
 
     if (!voiceChannel) {
       return message.channel.send({
-        content: `Kamu harus berada dalam \`voice channel\` untuk memainkan musik!`,
+        embeds: [
+          new MessageEmbed()
+            .setColor("YELLOW")
+            .setDescription(
+              `Kamu harus berada dalam \`voice channel\` untuk memainkan musik!`
+            ),
+        ],
       });
     }
 
@@ -25,7 +39,13 @@ module.exports = {
       voiceChannel.id !== guild.me.voice.channelId
     ) {
       return message.channel.send({
-        content: `Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`,
+        embeds: [
+          new MessageEmbed()
+            .setColor("GREEN")
+            .setDescription(
+              `Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
+            ),
+        ],
       });
     }
 
@@ -35,7 +55,11 @@ module.exports = {
     });
 
     return message.channel.send({
-      content: `🎵 Permintaan diterima.`,
+      embeds: [
+        new MessageEmbed()
+          .setColor("GREEN")
+          .setDescription(`🎵 Permintaan musik diterima.`),
+      ],
     });
   },
 };
