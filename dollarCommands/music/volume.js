@@ -59,7 +59,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `🚫 Kamu hanya diperbolehkan memasukan angka diantara 1 sampai 100!`
+              `🚫 | Kamu hanya diperbolehkan memasukan angka diantara 1 sampai 100!`
             ),
         ],
       });
