@@ -1,4 +1,5 @@
 const handleDollarCommands = require("../modules/handleDollarCommands.js");
+const handleMusicCommands = require("../modules/handleMusicCommands.js");
 
 // Distribusi module events dengan nama event "messageCreate"
 module.exports = {
