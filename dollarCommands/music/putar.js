@@ -64,7 +64,7 @@ module.exports = {
           .getQueue(voiceChannel)
           .songs.at(songCount - 1);
         message.channel.lastMessage.edit({
-          content: `🎵 Memutar musik: \`${song.name}\``,
+          content: `🎵 Memutar: \`${song.name}\``,
         });
       });
   },
