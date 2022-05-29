@@ -14,9 +14,9 @@ module.exports = {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("YELLOW")
+            .setColor("RED")
             .setDescription(
-              `Tolong masukan format pencarian yang benar!\n\`$play nama-musik\``
+              `Tolong masukan format pencarian yang benar!\n\`$play (judul/url musik)\``
             ),
         ],
       });
@@ -26,7 +26,7 @@ module.exports = {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("YELLOW")
+            .setColor("RED")
             .setDescription(
               `Kamu harus berada dalam \`voice channel\` untuk memainkan musik!`
             ),
@@ -41,7 +41,7 @@ module.exports = {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("GREEN")
+            .setColor("#07C966")
             .setDescription(
               `Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
             ),
@@ -57,7 +57,7 @@ module.exports = {
     return message.channel.send({
       embeds: [
         new MessageEmbed()
-          .setColor("GREEN")
+          .setColor("#07C966")
           .setDescription(`🎵 Permintaan musik diterima.`),
       ],
     });
