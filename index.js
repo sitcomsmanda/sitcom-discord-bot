@@ -80,6 +80,7 @@ const main = async () => {
 
   const distubeOptions = {
     youtubeDL: false,
+    updateYouTubeDL: false,
     emitNewSongOnly: true,
     emitAddSongWhenCreatingQueue: false,
     leaveOnFinish: true,
