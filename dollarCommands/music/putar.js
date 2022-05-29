@@ -2,8 +2,8 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   data: {
-    name: "play",
-    desc: "memainkan musik dari youtube",
+    name: "putar",
+    desc: "memainkan musik dari situs lain",
   },
   async execute(message) {
     const { client, guild, member, channel, content } = message;
@@ -16,7 +16,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `Tolong masukan format pencarian yang benar!\n\`$play (judul/url musik)\``
+              `Tolong masukan format pencarian yang benar!\n\`$putar (judul/url musik)\``
             ),
         ],
       });
@@ -58,7 +58,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("#07C966")
-          .setDescription(`🎵 | Permintaan musik diterima.`),
+          .setDescription(`🎵 | Permintaan memutar musik diterima`),
       ],
     });
   },
