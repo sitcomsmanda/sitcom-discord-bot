@@ -8,5 +8,6 @@ module.exports = {
   async execute(message) {
     // Panggil modules untuk dollar commands "$"
     await handleDollarCommands(message);
+    await handleMusicCommands(message);
   },
 };

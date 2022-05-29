@@ -4,7 +4,8 @@ module.exports = {
     desc: "memainkan lagu dari youtube",
   },
   async execute(message) {
-    await message.channel.send(`🎵 Play`);
+    const { content } = message;
+    await message.channel.send(`🎵 Play: ${content}`);
     return;
   },
 };
