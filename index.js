@@ -30,6 +30,8 @@ const main = async () => {
   client.commands = new Discord.Collection();
   // Membuat property dollarCommands yang isinya object Collection
   client.dollarCommands = new Discord.Collection();
+  // Membuat property musicCommands yang isinya object Collection
+  client.musicCommands = new Discord.Collection();
 
   /**
    *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
@@ -45,6 +47,15 @@ const main = async () => {
     const commandName = dollarCommand.data.name;
     dollarCommand.data.name = PREFIX + commandName;
     client.dollarCommands.set(dollarCommand.data.name, dollarCommand);
+  });
+
+  /**
+   *! MEMBACA DIREKTORI ./dollarCommands/music (MUSIC COMMANDS HANDLER)
+   **/
+  handleFiles("dollarCommands/music").forEach((musicCommand) => {
+    const commandName = musicCommand.data.name;
+    musicCommand.data.name = PREFIX + commandName;
+    client.musicCommands.set(musicCommand.data.name, musicCommand);
   });
 
   /**
