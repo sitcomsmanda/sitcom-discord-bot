@@ -7,6 +7,8 @@ module.exports = {
   name: "messageCreate",
   // Method isi Events messageCreate
   async execute(message) {
+    // Menampilkan User yang menggunakan command
+    console.log(`${message.author.username}: ${message.content}`);
     // Panggil modules untuk dollar commands "$"
     await handleDollarCommands(message);
     await handleMusicCommands(message);

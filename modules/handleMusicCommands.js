@@ -16,16 +16,13 @@ const cleanMessage = (oldContent) => {
 
 // Fungsi Dolar Utama yang dipanggil di messageCreate Event
 const handleMusicCommands = async (message) => {
-  const { author, client } = message;
+  const { client } = message;
 
   // Pencegah masuk function tanpa PREFIX
   if (!(message.content[0] === PREFIX)) return;
 
   // Membersihkan spasi yang tidak guna
   message.content = cleanMessage(message.content);
-
-  // Menampilkan User yang menggunakan command
-  console.log(`${author.username}: ${message.content}`);
 
   // Mengambil hanya index ke-0 dari rentetan pesan yang di split spasi
   const contentCommand = message.content.split(" ")[0];
