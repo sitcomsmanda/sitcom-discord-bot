@@ -8,7 +8,7 @@ module.exports = {
   async execute(message) {
     const { client, guild, member, channel, content } = message;
     const voiceChannel = member.voice.channel;
-    const query = content.split(" ")[1];
+    const query = content.substring(6);
 
     if (!query) {
       return message.channel.send({
@@ -49,17 +49,23 @@ module.exports = {
       });
     }
 
-    await client.distube.play(voiceChannel, query, {
-      textChannel: channel,
-      member: member,
+    message.channel.send({
+      content: `🔎 Mencari musik...`,
     });
 
-    return message.channel.send({
-      embeds: [
-        new MessageEmbed()
-          .setColor("#07C966")
-          .setDescription(`🎵 | Permintaan memutar musik diterima`),
-      ],
-    });
+    return client.distube
+      .play(voiceChannel, query, {
+        textChannel: channel,
+        member: member,
+      })
+      .then(() => {
+        const songCount = client.distube.getQueue(voiceChannel).songs.length;
+        const song = client.distube
+          .getQueue(voiceChannel)
+          .songs.at(songCount - 1);
+        message.channel.lastMessage.edit({
+          content: `🎵 Memutar musik: \`${song.name}\``,
+        });
+      });
   },
 };
