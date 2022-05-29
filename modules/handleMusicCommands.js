@@ -11,8 +11,6 @@ const cleanMessage = (oldContent) => {
       newContents += msg;
     }
   });
-  console.log(newContents);
-
   return newContents;
 };
 
