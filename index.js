@@ -76,11 +76,15 @@ const main = async () => {
    **/
   const { DisTube } = require("distube");
   const { SpotifyPlugin } = require("@distube/spotify");
-  client.distube = new DisTube(client, {
+  const { YtDlpPlugin } = require("@distube/yt-dlp");
+
+  const distubeOptions = {
+    youtubeDL: false,
     emitNewSongOnly: true,
     emitAddSongWhenCreatingQueue: false,
     leaveOnFinish: true,
     plugins: [
+      new YtDlpPlugin(),
       new SpotifyPlugin({
         parallel: true,
         emitEventsAfterFetching: false,
@@ -90,7 +94,9 @@ const main = async () => {
         },
       }),
     ],
-  });
+  };
+
+  client.distube = new DisTube(client, distubeOptions);
 
   module.exports = client;
 
