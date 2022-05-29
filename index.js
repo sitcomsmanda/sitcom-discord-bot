@@ -12,71 +12,82 @@ const PREFIX = process.env.PREFIX;
 const CLIENT_ID_SPOTIFY = process.env.CLIENT_ID_SPOTIFY;
 const CLIENT_SECRET_SPOTIFY = process.env.CLIENT_SECRET_SPOTIFY;
 
-// Inisialisasi object client utama
-const client = new Discord.Client({
-  intents: [
+const main = async () => {
+  // Opsi Intens
+  const options = [
     Discord.Intents.FLAGS.GUILDS,
     Discord.Intents.FLAGS.GUILD_MEMBERS,
     Discord.Intents.FLAGS.GUILD_MESSAGES,
     Discord.Intents.FLAGS.GUILD_VOICE_STATES,
-  ],
-});
+  ];
 
-// Membuat property commands yang isinya object Collection
-client.commands = new Discord.Collection();
-// Membuat property dollarCommands yang isinya object Collection
-client.dollarCommands = new Discord.Collection();
+  // Inisialisasi object client utama
+  const client = new Discord.Client({
+    intents: options,
+  });
 
-/**
- *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
- **/
-handleFiles("commands").forEach((command) => {
-  client.commands.set(command.data.name, command);
-});
+  // Membuat property commands yang isinya object Collection
+  client.commands = new Discord.Collection();
+  // Membuat property dollarCommands yang isinya object Collection
+  client.dollarCommands = new Discord.Collection();
 
-/**
- *! MEMBACA DIREKTORI ./dollarCommands (DOLLAR COMMANDS HANDLER)
- **/
-handleFiles("dollarCommands").forEach((dollarCommand) => {
-  const commandName = dollarCommand.data.name;
-  dollarCommand.data.name = PREFIX + commandName;
-  client.dollarCommands.set(dollarCommand.data.name, dollarCommand);
-});
+  /**
+   *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
+   **/
+  handleFiles("commands").forEach((command) => {
+    client.commands.set(command.data.name, command);
+  });
 
-/**
- *! MEMBACA DIREKTORI ./events (EVENTS HANDLER)
- **/
-handleFiles("events").forEach((event) => {
-  if (event.once) {
-    // Jika tipe event adalah once
-    client.once(event.name, (...args) => event.execute(...args));
-  } else {
-    // Jika tipe event adalah on
-    client.on(event.name, (...args) => event.execute(...args));
-  }
-});
+  /**
+   *! MEMBACA DIREKTORI ./dollarCommands (DOLLAR COMMANDS HANDLER)
+   **/
+  handleFiles("dollarCommands").forEach((dollarCommand) => {
+    const commandName = dollarCommand.data.name;
+    dollarCommand.data.name = PREFIX + commandName;
+    client.dollarCommands.set(dollarCommand.data.name, dollarCommand);
+  });
 
-/**
- *! DisTube Init
- **/
-const { DisTube } = require("distube");
-const { SpotifyPlugin } = require("@distube/spotify");
-client.distube = new DisTube(client, {
-  emitNewSongOnly: true,
-  emitAddSongWhenCreatingQueue: false,
-  leaveOnFinish: true,
-  plugins: [
-    new SpotifyPlugin({
-      parallel: true,
-      emitEventsAfterFetching: false,
-      api: {
-        clientId: CLIENT_ID_SPOTIFY,
-        clientSecret: CLIENT_SECRET_SPOTIFY,
-      },
-    }),
-  ],
-});
+  /**
+   *! MEMBACA DIREKTORI ./events (EVENTS HANDLER)
+   **/
+  handleFiles("events").forEach((event) => {
+    if (event.once) {
+      // Jika tipe event adalah once
+      client.once(event.name, (...args) => event.execute(...args));
+    } else {
+      // Jika tipe event adalah on
+      client.on(event.name, (...args) => event.execute(...args));
+    }
+  });
 
-module.exports = client;
+  /**
+   *! DisTube Init
+   **/
+  const { DisTube } = require("distube");
+  const { SpotifyPlugin } = require("@distube/spotify");
+  client.distube = new DisTube(client, {
+    emitNewSongOnly: true,
+    emitAddSongWhenCreatingQueue: false,
+    leaveOnFinish: true,
+    plugins: [
+      new SpotifyPlugin({
+        parallel: true,
+        emitEventsAfterFetching: false,
+        api: {
+          clientId: CLIENT_ID_SPOTIFY,
+          clientSecret: CLIENT_SECRET_SPOTIFY,
+        },
+      }),
+    ],
+  });
 
-client.login(TOKEN);
+  module.exports = client;
+
+  await client.login(TOKEN);
+};
+
+try {
+  main();
+} catch (error) {
+  console.error;
+}
