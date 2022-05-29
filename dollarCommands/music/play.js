@@ -58,7 +58,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("#07C966")
-          .setDescription(`🎵 Permintaan musik diterima.`),
+          .setDescription(`🎵 | Permintaan musik diterima.`),
       ],
     });
   },
