@@ -30,7 +30,6 @@ const handleMusicCommands = async (message) => {
   console.log(`${author.username}: ${message.content}`);
 
   // Mengambil hanya index ke-0 dari rentetan pesan yang di split spasi
-
   const contentCommand = message.content.split(" ")[0];
 
   // Mengambil musicCommand di client collection
