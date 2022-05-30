@@ -69,7 +69,7 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(`▶️ | Memutar \`${song.name}\``),
+                .setDescription(`▶️ | Memutar **1.** \`${song.name}\``),
             ],
           });
         } else {
@@ -78,7 +78,9 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(`↩️ | Antrean \`${songsCount}. ${song.name}\``),
+                .setDescription(
+                  `↩️ | Antrean **${songsCount}.** \`${song.name}\``
+                ),
             ],
           });
         }
