@@ -27,6 +27,8 @@ const main = async () => {
   });
 
   // Membuat property commands yang isinya object Collection
+  client.prefix = PREFIX;
+  // Membuat property commands yang isinya object Collection
   client.commands = new Discord.Collection();
   // Membuat property dollarCommands yang isinya object Collection
   client.dollarCommands = new Discord.Collection();
