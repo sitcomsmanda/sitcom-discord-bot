@@ -2,8 +2,8 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   data: {
-    name: "lanjutkan",
-    desc: "melanjutkan lagi musik yang dijeda",
+    name: "berhenti",
+    desc: "menghentikan semua musik",
   },
   async execute(message) {
     const { client, guild, member } = message;
@@ -15,7 +15,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `❗ | Kamu harus berada dalam \`voice channel\` untuk melanjutkan musik`
+              `❗ | Kamu harus berada dalam \`voice channel\` untuk menghentikan musik`
             ),
         ],
       });
@@ -48,15 +48,13 @@ module.exports = {
       });
     }
 
-    const song = queue.songs.at(0);
-
-    await queue.resume(voiceChannel);
+    await queue.stop(voiceChannel);
 
     return message.channel.send({
       embeds: [
         new MessageEmbed()
           .setColor("#07C966")
-          .setDescription(`▶️ | \`${song.name}\``),
+          .setDescription(`⏹️ | Menghentikan semua antrean musik`),
       ],
     });
   },
