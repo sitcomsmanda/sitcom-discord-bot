@@ -65,22 +65,20 @@ module.exports = {
           .songs.at(songsCount - 1);
         if (songsCount <= 1) {
           message.channel.lastMessage.edit({
-            content: `^`,
+            content: `.`,
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(`▶️ | Memutar **1.** \`${song.name}\``),
+                .setDescription(`▶️ | Memutar \`1. ${song.name}\``),
             ],
           });
         } else {
           message.channel.lastMessage.edit({
-            content: `^`,
+            content: `.`,
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(
-                  `↩️ | Antrean **${songsCount}.** \`${song.name}\``
-                ),
+                .setDescription(`↩️ | Antrean \`${songsCount}. ${song.name}\``),
             ],
           });
         }
