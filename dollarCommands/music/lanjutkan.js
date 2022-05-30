@@ -56,7 +56,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("#07C966")
-          .setDescription(`▶️ | Melanjutkan \`${song.name}\``),
+          .setDescription(`▶️ | \`${song.name}\``),
       ],
     });
   },
