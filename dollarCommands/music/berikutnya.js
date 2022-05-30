@@ -48,7 +48,6 @@ module.exports = {
       });
     }
 
-    const prevSong = queue.songs.at(0);
     const nextSong = queue.songs.at(1);
 
     await queue.skip(voiceChannel);
@@ -57,7 +56,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("#07C966")
-          .setDescription(`⏭️ | \`1. ${prevSong}\` > \`2. ${nextSong}\``),
+          .setDescription(`⏭️ | \`${nextSong.name}\``),
       ],
     });
   },
