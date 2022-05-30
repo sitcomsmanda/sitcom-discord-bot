@@ -78,9 +78,7 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(
-                  `↩️ | Antrean \`${songsCount - 1}. ${song.name}\``
-                ),
+                .setDescription(`↩️ | Antrean \`${songsCount}. ${song.name}\``),
             ],
           });
         }
