@@ -15,7 +15,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `🚫 | Kamu harus berada dalam \`voice channel\` untuk menghentikan musik`
+              `❗ | Kamu harus berada dalam \`voice channel\` untuk menghentikan musik`
             ),
         ],
       });
