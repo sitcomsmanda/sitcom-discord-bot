@@ -1,7 +1,3 @@
-require("dotenv").config();
-
-const PREFIX = process.env.PREFIX;
-
 // Fungsi untuk membersihkan pesan command music
 const cleanMessage = (oldContent) => {
   let newContents = ``;
@@ -19,7 +15,7 @@ const handleMusicCommands = async (message) => {
   const { client } = message;
 
   // Pencegah masuk function tanpa PREFIX
-  if (!(message.content[0] === PREFIX)) return;
+  if (!(message.content[0] === client.prefix)) return;
 
   // Membersihkan spasi yang tidak guna
   message.content = cleanMessage(message.content);
