@@ -21,11 +21,11 @@ module.exports = {
     const voiceChannel = guild.me.voice;
     const queue = await client.distube.getQueue(voiceChannel);
 
-    if (!queue) {
+    if (!queue || !voiceChannel.channelId) {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("#07C966")
+            .setColor("RED")
             .setDescription(`🚫 | Antrean musik lagi kosong nih`),
         ],
       });
