@@ -16,7 +16,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `Tolong masukan format pencarian yang benar!\n\`$putar (judul/url musik)\``
+              `❗ | Tolong masukan format pencarian yang benar!\n\`$putar (judul/url musik)\``
             ),
         ],
       });
@@ -28,7 +28,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `Kamu harus berada dalam \`voice channel\` untuk memainkan musik!`
+              `❗ | Kamu harus berada dalam \`voice channel\` untuk memainkan musik!`
             ),
         ],
       });
@@ -41,9 +41,9 @@ module.exports = {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("#07C966")
+            .setColor("YELLOW")
             .setDescription(
-              `Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
+              `❗ | Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
             ),
         ],
       });
