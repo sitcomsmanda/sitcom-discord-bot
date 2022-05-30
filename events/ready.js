@@ -8,13 +8,13 @@ module.exports = {
   async execute(client) {
     const activity = "$help";
     const type = "LISTENING";
-    const status = "dnd";
+    const status = "online";
     client.user.setPresence({
       activities: [{ name: activity, type: type }],
       status: status,
     });
     console.log(
-      `SITCOM is ready.\nactivites: "${activity}", status: ${status}`
+      `SITCOM is ready.\nactivites: "${type} ${activity}", status: ${status}`
     );
   },
 };
