@@ -59,13 +59,31 @@ module.exports = {
         member: member,
       })
       .then(() => {
-        const songCount = client.distube.getQueue(voiceChannel).songs.length;
+        const songsCount = client.distube.getQueue(voiceChannel).songs.length;
         const song = client.distube
           .getQueue(voiceChannel)
-          .songs.at(songCount - 1);
-        message.channel.lastMessage.edit({
-          content: `🎵 Memutar: \`${song.name}\``,
-        });
+          .songs.at(songsCount - 1);
+        if (songsCount <= 1) {
+          message.channel.lastMessage.edit({
+            content: `^`,
+            embeds: [
+              new MessageEmbed()
+                .setColor("#07C966")
+                .setDescription(`▶️ | Memutar \`${song.name}\``),
+            ],
+          });
+        } else {
+          message.channel.lastMessage.edit({
+            content: `^`,
+            embeds: [
+              new MessageEmbed()
+                .setColor("#07C966")
+                .setDescription(
+                  `↩️ | Antrean \`${songsCount - 1}. ${song.name}\``
+                ),
+            ],
+          });
+        }
       });
   },
 };
