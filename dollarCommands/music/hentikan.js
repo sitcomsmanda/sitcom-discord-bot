@@ -15,7 +15,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `Kamu harus berada dalam \`voice channel\` untuk menghentikan musik`
+              `🚫 | Kamu harus berada dalam \`voice channel\` untuk menghentikan musik`
             ),
         ],
       });
@@ -28,9 +28,9 @@ module.exports = {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("#07C966")
+            .setColor("YELLOW")
             .setDescription(
-              `Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
+              `❗ | Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
             ),
         ],
       });
