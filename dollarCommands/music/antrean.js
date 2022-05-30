@@ -14,7 +14,7 @@ const setStatus = (queue) =>
 module.exports = {
   data: {
     name: "antrean",
-    desc: "melihat antrean musik yang akan diputar",
+    desc: "melihat antrean musik yang diputar",
   },
   async execute(message) {
     const { client, member } = message;
