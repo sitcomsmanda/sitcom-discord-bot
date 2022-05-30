@@ -17,8 +17,8 @@ module.exports = {
     desc: "melihat antrean musik yang diputar",
   },
   async execute(message) {
-    const { client, member } = message;
-    const voiceChannel = member.voice.channel;
+    const { client, guild } = message;
+    const voiceChannel = guild.me.voice;
     const queue = await client.distube.getQueue(voiceChannel);
 
     if (!queue) {
