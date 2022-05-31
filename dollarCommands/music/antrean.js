@@ -14,7 +14,7 @@ const setStatus = (queue) =>
 module.exports = {
   data: {
     name: "antrean",
-    desc: "melihat antrean musik yang diputar",
+    desc: "melihat antrean",
   },
   async execute(message) {
     const { client, guild } = message;
