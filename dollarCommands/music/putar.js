@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { bold } = require("@discordjs/builders");
 
 module.exports = {
   data: {
@@ -16,7 +17,7 @@ module.exports = {
           new MessageEmbed()
             .setColor("RED")
             .setDescription(
-              `❗ | Tolong masukan format pencarian yang benar!\n\`$putar (judul/url musik)\``
+              `❗ | Tolong masukan format pencarian yang sesuai!\n\`$putar (judul/url musik)\``
             ),
         ],
       });
@@ -69,7 +70,7 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(`▶️ | Memutar \`1. ${song.name}\``),
+                .setDescription(`▶️ | ${bold(`1. ${song.name}`)}`),
             ],
           });
         } else {
@@ -78,7 +79,7 @@ module.exports = {
             embeds: [
               new MessageEmbed()
                 .setColor("#07C966")
-                .setDescription(`↩️ | Antrean \`${songsCount}. ${song.name}\``),
+                .setDescription(`↩️ | ${bold(`${songsCount}. ${song.name}`)}`),
             ],
           });
         }
