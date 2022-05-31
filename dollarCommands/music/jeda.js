@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   data: {
     name: "jeda",
-    desc: "menghentikan sementara musik yang sedang diputar",
+    desc: "menghentikan sementara",
   },
   async execute(message) {
     const { client, guild, member } = message;
