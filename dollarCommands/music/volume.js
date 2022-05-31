@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   data: {
     name: "volume",
-    desc: "mengatur volume musik",
+    desc: "mengatur volume",
   },
   async execute(message) {
     const { client, guild, member, content } = message;
