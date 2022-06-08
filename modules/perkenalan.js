@@ -1,6 +1,7 @@
 const path = require("path");
 const { URLSearchParams } = require("url");
 const axios = require("axios");
+const FormData = require("form-data");
 
 const { registerFont, loadImage, createCanvas } = require("canvas");
 const { MessageAttachment, MessageEmbed } = require("discord.js");
@@ -123,8 +124,7 @@ const Perkenalan = async (msg, client) => {
 
       // Save to db
       try {
-        const encodedData = await submitData(data);
-        console.log(encodedData);
+        submitData(data);
       } catch (error) {
         console.error(error);
       }
@@ -140,7 +140,7 @@ const Perkenalan = async (msg, client) => {
 
 const submitData = async (data) => {
   try {
-    const formData = new URLSearchParams();
+    const formData = new FormData();
     for (const prop in data) {
       formData.append(prop, data[prop]);
     }
