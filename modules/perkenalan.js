@@ -98,7 +98,7 @@ const Perkenalan = async (msg, client) => {
       } else if (kelas.at(0) == "X" && kelas.at(1) != "I") {
         await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS10]);
       } else {
-        deleteMsg();
+        deleteMsg(msg);
         sendTempMsg(msg.channel, wrongKelasMsg);
         return;
       }
