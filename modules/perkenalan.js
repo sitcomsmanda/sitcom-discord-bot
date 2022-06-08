@@ -19,17 +19,28 @@ const Perkenalan = async (msg, client) => {
     const split = msg.content.split(/\n/gm);
     const user = msg.author;
     const wrongFormatMsg = {
-      content: `<@${user.id}> ,tolong masukkan data sesuai format!`,
+      content: `<@${user.id}> , tolong masukkan data sesuai format!`,
       allowedMentions: { users: [user.id] },
     };
     const wrongKelasMsg = {
-      content: `<@${user.id}> ,tolong masukkan data kelas sesuai contoh!`,
+      content: `<@${user.id}> , data kelas tidak sesuai format (X, XI, XII)!`,
+      allowedMentions: { users: [user.id] },
+    };
+    const alreadyIntroduced = {
+      content: `<@${user.id}> , kamu sudah berkenalan!`,
       allowedMentions: { users: [user.id] },
     };
     const replyMsg = {
       content: `Terima kasih <@${user.id}> sudah perkenalan sesuai format, salam kenal!`,
       allowedMentions: { users: [user.id] },
     };
+
+    // check if user already introduce
+    if (msg.member.roles.cache.has(ROLES_MEMBER)) {
+      deleteMsg(msg);
+      sendTempMsg(msg.channel, alreadyIntroduced);
+      return;
+    }
 
     if (split.length !== 5) {
       deleteMsg(msg);
@@ -72,11 +83,11 @@ const Perkenalan = async (msg, client) => {
       const kelas = data.kelas.toUpperCase();
 
       if (kelas.at(0) == "X" && kelas.at(1) == "I" && kelas.at(2) == "I") {
-        msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS12]);
+        await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS12]);
       } else if (kelas.at(0) == "X" && kelas.at(1) == "I") {
-        msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS11]);
+        await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS11]);
       } else if (kelas.at(0) == "X") {
-        msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS10]);
+        await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS10]);
       } else {
         deleteMsg();
         sendTempMsg(msg.channel, wrongKelasMsg);
