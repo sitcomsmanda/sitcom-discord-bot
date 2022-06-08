@@ -22,6 +22,10 @@ const Perkenalan = async (msg, client) => {
       content: `<@${user.id}> ,tolong masukkan data sesuai format!`,
       allowedMentions: { users: [user.id] },
     };
+    const wrongKelasMsg = {
+      content: `<@${user.id}> ,tolong masukkan data kelas sesuai contoh!`,
+      allowedMentions: { users: [user.id] },
+    };
     const replyMsg = {
       content: `Terima kasih <@${user.id}> sudah perkenalan sesuai format, salam kenal!`,
       allowedMentions: { users: [user.id] },
@@ -75,7 +79,7 @@ const Perkenalan = async (msg, client) => {
         msg.member.roles.add([ROLES_KELAS12]);
       } else {
         deleteMsg();
-        sendTempMsg(msg.channel, wrongFormatMsg);
+        sendTempMsg(msg.channel, wrongKelasMsg);
         return;
       }
 

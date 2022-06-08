@@ -23,6 +23,7 @@ const main = async () => {
       Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
       Discord.Intents.FLAGS.GUILD_PRESENCES,
       Discord.Intents.FLAGS.GUILD_WEBHOOKS,
+      Discord.Intents.FLAGS.GUILD_VOICE_STATES,
     ],
     allowedMentions: {
       parse: ["users", "roles"],
