@@ -31,7 +31,7 @@ const Perkenalan = async (msg, client) => {
       allowedMentions: { users: [user.id] },
     };
     const replyMsg = {
-      content: `Terima kasih <@${user.id}> sudah perkenalan sesuai format, salam kenal!`,
+      content: `Terima kasih <@${user.id}> sudah memperkenalkan diri sesuai format, salam kenal ya!`,
       allowedMentions: { users: [user.id] },
     };
 
