@@ -92,16 +92,10 @@ const Perkenalan = async (msg, client) => {
       } else if (
         kelas.at(0) == "X" &&
         kelas.at(1) == "I" &&
-        kelas.at(2) != "I" &&
-        kelas.at(3) != "I"
+        kelas.at(2) != "I"
       ) {
         await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS11]);
-      } else if (
-        kelas.at(0) == "X" &&
-        kelas.at(1) != "I" &&
-        kelas.at(2) != "I" &&
-        kelas.at(3) != "I"
-      ) {
+      } else if (kelas.at(0) == "X" && kelas.at(1) != "I") {
         await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS10]);
       } else {
         deleteMsg();
