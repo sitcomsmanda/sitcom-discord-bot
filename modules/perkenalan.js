@@ -1,5 +1,5 @@
 const path = require("path");
-const fetch = require("node-fetch");
+const https = require("https");
 const { URLSearchParams } = require("url");
 
 const { registerFont, loadImage, createCanvas } = require("canvas");
@@ -144,7 +144,14 @@ const submitData = async (data) => {
     for (const prop in data) {
       formData.append(prop, data[prop]);
     }
-    fetch(GS_SCRIPT_URL, { method: "POST", body: formData })
+    fetch(GS_SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data; boundary=12345",
+        Accept: "*/*",
+      },
+      body: formData,
+    })
       .then((response) => console.log("Success!", response))
       .catch((error) => console.error("Error!", error.message));
   } catch (error) {
