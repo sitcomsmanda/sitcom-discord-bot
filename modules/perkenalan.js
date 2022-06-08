@@ -1,4 +1,7 @@
 const path = require("path");
+const fetch = require("node-fetch");
+const { URLSearchParams } = require("url");
+
 const { registerFont, loadImage, createCanvas } = require("canvas");
 const { MessageAttachment, MessageEmbed } = require("discord.js");
 const { deleteMsg, sendTempMsg } = require("./utility.js");
@@ -73,7 +76,7 @@ const Perkenalan = async (msg, client) => {
         nama: split[0].replace("Nama:", "").trim(),
         kelas: split[1].replace("Kelas:", "").trim(),
         hobi: split[2].replace("Hobi:", "").trim(),
-        asalSMP: split[3].replace("Asal SMP:", "").trim(),
+        asal_smp: split[3].replace("Asal SMP:", "").trim(),
         tujuan: split[4].replace("Tujuan masuk sitcom:", "").trim(),
       };
 
@@ -120,7 +123,8 @@ const Perkenalan = async (msg, client) => {
 
       // Save to db
       try {
-        console.log(data);
+        const encodedData = await submitData(data);
+        console.log(encodedData);
       } catch (error) {
         console.error(error);
       }
@@ -129,6 +133,20 @@ const Perkenalan = async (msg, client) => {
       sendTempMsg(msg.channel, wrongFormatMsg);
       return;
     }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const submitData = async (data) => {
+  try {
+    const formData = new URLSearchParams();
+    for (const prop in data) {
+      formData.append(prop, data[prop]);
+    }
+    fetch(GS_SCRIPT_URL, { method: "POST", body: formData })
+      .then((response) => console.log("Success!", response))
+      .catch((error) => console.error("Error!", error.message));
   } catch (error) {
     console.error(error);
   }
