@@ -30,9 +30,7 @@ const main = async () => {
   };
 
   // Inisialisasi object client utama
-  const client = new Discord.Client({
-    intents: options,
-  });
+  const client = new Discord.Client(options);
 
   // Membuat property commands yang isinya object Collection
   client.prefix = PREFIX;
