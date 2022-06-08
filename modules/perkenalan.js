@@ -5,7 +5,10 @@ const { deleteMsg, sendTempMsg } = require("./utility.js");
 
 const CHANNEL_LOBBY = process.env.CHANNEL_LOBBY;
 const CHANNEL_PERKENALAN = process.env.CHANNEL_PERKENALAN;
-const ROLES_KELAS = process.env.ROLES_KELAS;
+const ROLES_KELAS10 = process.env.ROLES_KELAS10;
+const ROLES_KELAS11 = process.env.ROLES_KELAS11;
+const ROLES_KELAS12 = process.env.ROLES_KELAS12;
+const ROLES_MEMBER = process.env.ROLES_MEMBER;
 
 const fontPath = path.resolve("./assets/fonts/BebasNeue-Regular.ttf");
 registerFont(fontPath, { family: "Bebas Neue", weight: 400 });
@@ -62,8 +65,22 @@ const Perkenalan = async (msg, client) => {
         return;
       }
 
-      // Add roles to user
-      msg.member.roles.add([ROLES_KELAS]);
+      const kelas = data.kelas.toUpperCase();
+
+      if (kelas.includes("10")) {
+        msg.member.roles.add([ROLES_KELAS10]);
+      } else if (kelas.includes("11")) {
+        msg.member.roles.add([ROLES_KELAS11]);
+      } else if (kelas.includes("12")) {
+        msg.member.roles.add([ROLES_KELAS12]);
+      } else {
+        deleteMsg();
+        sendTempMsg(msg.channel, wrongFormatMsg);
+        return;
+      }
+
+      // Add member roles to user
+      msg.member.roles.add([ROLES_MEMBER]);
 
       // Add Reaction
       msg.react("✅");
