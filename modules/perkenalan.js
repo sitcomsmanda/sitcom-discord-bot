@@ -148,11 +148,11 @@ const submitData = async (data) => {
       method: "POST",
       url: GS_SCRIPT_URL,
       headers: {
-        "Content-Type": "multipart/form-data; boundary=12345",
+        "Content-Type": `multipart/form-data; boundary=${formData.getBoundary()}`,
       },
       data: formData,
     })
-      .then((response) => console.log("Success!", response))
+      .then(() => console.log("Success!", data))
       .catch((error) => console.error("Error!", error.message));
   } catch (error) {
     console.error(error);
