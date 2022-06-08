@@ -66,7 +66,7 @@ const Perkenalan = async (msg, client) => {
       split[1].includes("Kelas:") &&
       split[2].includes("Hobi:") &&
       split[3].includes("Asal SMP:") &&
-      split[4].includes("Tujuan masuk sitcom:")
+      split[4].includes("Alasan masuk sitcom:")
     ) {
       // Send data
       const data = {
@@ -78,7 +78,7 @@ const Perkenalan = async (msg, client) => {
         kelas: split[1].replace("Kelas:", "").trim(),
         hobi: split[2].replace("Hobi:", "").trim(),
         asal_smp: split[3].replace("Asal SMP:", "").trim(),
-        tujuan: split[4].replace("Tujuan masuk sitcom:", "").trim(),
+        alasan: split[4].replace("Alasan masuk sitcom:", "").trim(),
       };
 
       const nameRE = new RegExp(/^(([A-Za-z]+[,.]?[ ]?|[a-z]+['-]?)+)$/, "mg");
