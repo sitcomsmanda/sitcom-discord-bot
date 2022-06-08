@@ -102,8 +102,7 @@ const Perkenalan = async (msg, client) => {
 
       // Save to db
       try {
-        // await prisma.perkenalan.create({ data });
-        await msg.channel.send(JSON.stringify(data));
+        console.log(data);
       } catch (error) {
         console.error(error);
       }
