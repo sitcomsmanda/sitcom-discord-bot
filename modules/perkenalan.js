@@ -71,11 +71,11 @@ const Perkenalan = async (msg, client) => {
 
       const kelas = data.kelas.toUpperCase();
 
-      if (kelas.includes("10")) {
+      if (kelas.includes("X")) {
         msg.member.roles.add([ROLES_KELAS10]);
-      } else if (kelas.includes("11")) {
+      } else if (kelas.includes("XI")) {
         msg.member.roles.add([ROLES_KELAS11]);
-      } else if (kelas.includes("12")) {
+      } else if (kelas.includes("XII")) {
         msg.member.roles.add([ROLES_KELAS12]);
       } else {
         deleteMsg();
