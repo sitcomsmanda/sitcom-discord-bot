@@ -71,20 +71,17 @@ const Perkenalan = async (msg, client) => {
 
       const kelas = data.kelas.toUpperCase();
 
-      if (kelas.includes("X")) {
-        msg.member.roles.add([ROLES_KELAS10]);
-      } else if (kelas.includes("XI")) {
-        msg.member.roles.add([ROLES_KELAS11]);
-      } else if (kelas.includes("XII")) {
-        msg.member.roles.add([ROLES_KELAS12]);
+      if (kelas.at(0) == "X" && kelas.at(1) == "I" && kelas.at(2) == "I") {
+        msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS12]);
+      } else if (kelas.at(0) == "X" && kelas.at(1) == "I") {
+        msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS11]);
+      } else if (kelas.at(0) == "X") {
+        msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS10]);
       } else {
         deleteMsg();
         sendTempMsg(msg.channel, wrongKelasMsg);
         return;
       }
-
-      // Add member roles to user
-      msg.member.roles.add([ROLES_MEMBER]);
 
       // Add Reaction
       msg.react("✅");
