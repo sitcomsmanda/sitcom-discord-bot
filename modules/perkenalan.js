@@ -72,7 +72,7 @@ const Perkenalan = async (msg, client) => {
         nama: split[0].replace("Nama:", "").trim(),
         kelas: split[1].replace("Kelas:", "").trim(),
         hobi: split[2].replace("Hobi:", "").trim(),
-        asalSmp: split[3].replace("Asal SMP:", "").trim(),
+        asalSMP: split[3].replace("Asal SMP:", "").trim(),
         tujuan: split[4].replace("Tujuan masuk sitcom:", "").trim(),
       };
 
