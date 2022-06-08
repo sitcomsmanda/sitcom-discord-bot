@@ -14,12 +14,20 @@ const CLIENT_SECRET_SPOTIFY = process.env.CLIENT_SECRET_SPOTIFY;
 
 const main = async () => {
   // Opsi Intens
-  const options = [
-    Discord.Intents.FLAGS.GUILDS,
-    Discord.Intents.FLAGS.GUILD_MEMBERS,
-    Discord.Intents.FLAGS.GUILD_MESSAGES,
-    Discord.Intents.FLAGS.GUILD_VOICE_STATES,
-  ];
+  const options = {
+    intents: [
+      Discord.Intents.FLAGS.GUILDS,
+      Discord.Intents.FLAGS.GUILD_MEMBERS,
+      Discord.Intents.FLAGS.GUILD_MESSAGES,
+      Discord.Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS,
+      Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+      Discord.Intents.FLAGS.GUILD_PRESENCES,
+      Discord.Intents.FLAGS.GUILD_WEBHOOKS,
+    ],
+    allowedMentions: {
+      parse: ["users", "roles"],
+    },
+  };
 
   // Inisialisasi object client utama
   const client = new Discord.Client({
