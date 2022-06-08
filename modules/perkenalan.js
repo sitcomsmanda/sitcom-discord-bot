@@ -1,6 +1,7 @@
 const path = require("path");
 const { registerFont, loadImage, createCanvas } = require("canvas");
 const { MessageAttachment, MessageEmbed } = require("discord.js");
+const { deleteMsg, sendTempMsg } = require("./utility.js");
 
 const CHANNEL_LOBBY = process.env.CHANNEL_LOBBY;
 const CHANNEL_PERKENALAN = process.env.CHANNEL_PERKENALAN;
@@ -19,24 +20,22 @@ const Perkenalan = async (msg, client) => {
       allowedMentions: { users: [user.id] },
     };
     const replyMsg = {
-      content: `Terima kasih <@${user.id}> ,sudah perkenalan sesuai format. Salam kenal`,
+      content: `Terima kasih <@${user.id}> sudah perkenalan sesuai format, salam kenal!`,
       allowedMentions: { users: [user.id] },
     };
 
-    if (split.length !== 7) {
+    if (split.length !== 5) {
       deleteMsg(msg);
       sendTempMsg(msg.channel, wrongFormatMsg);
       return;
     }
 
     if (
-      split[0].includes("Siapa nama kamu?") &&
-      split[1].includes("Asal dari mana?") &&
-      split[2].includes("Sekolah / Kuliah di mana?") &&
-      split[3].includes("Bekerja di mana?") &&
-      split[4].includes("Dari mana tau WPU?") &&
-      split[5].includes("Bahasa pemrograman favorit?") &&
-      split[6].includes("Hobby / Interest?")
+      split[0].includes("Nama:") &&
+      split[1].includes("Kelas:") &&
+      split[2].includes("Hobi:") &&
+      split[3].includes("Asal SMP:") &&
+      split[4].includes("Tujuan masuk sitcom:")
     ) {
       // Send data
       const data = {
@@ -44,15 +43,11 @@ const Perkenalan = async (msg, client) => {
         channel_id: msg.channelId,
         message_id: msg.id,
         message_content: msg.content,
-        nama: split[0].replace("Siapa nama kamu?", "").trim(),
-        asal: split[1].replace("Asal dari mana?", "").trim(),
-        sekolah: split[2].replace("Sekolah / Kuliah di mana?", "").trim(),
-        bekerja: split[3].replace("Bekerja di mana?", "").trim(),
-        referal: split[4].replace("Dari mana tau WPU?", "").trim(),
-        favorite_programing_language: split[5]
-          .replace("Bahasa pemrograman favorit?", "")
-          .trim(),
-        hobby: split[6].replace("Hobby / Interest?", "").trim(),
+        nama: split[0].replace("Nama:", "").trim(),
+        kelas: split[1].replace("Kelas:", "").trim(),
+        hobi: split[2].replace("Hobi:", "").trim(),
+        asalSmp: split[3].replace("Asal SMP:", "").trim(),
+        tujuan: split[4].replace("Tujuan masuk sitcom:", "").trim(),
       };
 
       const nameRE = new RegExp(/^(([A-Za-z]+[,.]?[ ]?|[a-z]+['-]?)+)$/, "mg");
@@ -79,6 +74,7 @@ const Perkenalan = async (msg, client) => {
       // Save to db
       try {
         // await prisma.perkenalan.create({ data });
+        await msg.channel.send(JSON.stringify(data));
       } catch (error) {
         console.error(error);
       }
