@@ -35,11 +35,19 @@ const Perkenalan = async (msg, client) => {
       allowedMentions: { users: [user.id] },
     };
 
+    const roles = msg.member.roles.cache;
+
     // check if user already introduce
-    if (msg.member.roles.cache.has(ROLES_MEMBER)) {
-      deleteMsg(msg);
-      sendTempMsg(msg.channel, alreadyIntroduced);
-      return;
+    if (roles.has(ROLES_MEMBER)) {
+      if (
+        roles.has(ROLES_KELAS10) ||
+        roles.has(ROLES_KELAS11) ||
+        roles.has(ROLES_KELAS12)
+      ) {
+        deleteMsg(msg);
+        sendTempMsg(msg.channel, alreadyIntroduced);
+        return;
+      }
     }
 
     if (split.length !== 5) {
