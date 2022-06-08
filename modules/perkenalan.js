@@ -1,6 +1,6 @@
 const path = require("path");
-const { fetch } = require("undici");
 const { URLSearchParams } = require("url");
+const axios = require("axios");
 
 const { registerFont, loadImage, createCanvas } = require("canvas");
 const { MessageAttachment, MessageEmbed } = require("discord.js");
@@ -144,13 +144,13 @@ const submitData = async (data) => {
     for (const prop in data) {
       formData.append(prop, data[prop]);
     }
-    fetch(GS_SCRIPT_URL, {
+    axios({
       method: "POST",
+      url: GS_SCRIPT_URL,
       headers: {
         "Content-Type": "multipart/form-data; boundary=12345",
-        Accept: "*/*",
       },
-      body: formData,
+      data: formData,
     })
       .then((response) => console.log("Success!", response))
       .catch((error) => console.error("Error!", error.message));
