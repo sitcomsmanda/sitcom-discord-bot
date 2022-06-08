@@ -1,5 +1,5 @@
 const path = require("path");
-const https = require("https");
+const { fetch } = require("undici");
 const { URLSearchParams } = require("url");
 
 const { registerFont, loadImage, createCanvas } = require("canvas");
