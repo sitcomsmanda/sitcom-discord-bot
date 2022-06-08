@@ -113,20 +113,26 @@ const Join = async (guildMember, client) => {
     const perkenalanCh = await client.channels.fetch(CHANNEL_LOBBY);
     const attachment = new MessageAttachment(imageBuffer, "welcome.png");
 
-    let messages = `<:wpublack:723675025894539294> Selamat datang di server discord\n`;
-    messages += `Web Programming UNPAS\n`;
+    let messages = `Selamat datang di server discord\n`;
+    messages += `**SITCOM** (Student IT Community)\n`;
     messages += `\n`;
-    messages += `Sebelum itu, silakan membuka <#745872171825627157> untuk membaca **Peraturan** server kami!\n`;
+    messages += `Diharapkan untuk membaca **Peraturan** di <#902006311967928411> terlebih dahulu!\n`;
     messages += `\n`;
-    messages += `Dilanjutkan ke <#722024507707228160> untuk berkenalan **sesuai format**\n`;
+    messages += `Lalu ke <#902096654444920872> untuk berkenalan **sesuai format**.\n`;
     messages += `\n`;
-    messages += `Jika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua Kelas__\n`;
+    messages += `Jika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__\n`;
 
     const embed = new MessageEmbed()
+      .setColor("#07C966")
       .setTitle(`Hallo, ${username}`)
       .setDescription(messages)
       .setThumbnail(guildMember.avatarURL())
-      .setImage("attachment://welcome.png");
+      .setImage("attachment://welcome.png")
+      .setTimestamp()
+      .setFooter({
+        text: `${user.username}`,
+        iconURL: `${user.displayAvatarURL()}`,
+      });
 
     perkenalanCh.send({
       content: `<@${user.id}> Selamat Datang!`,
@@ -138,70 +144,6 @@ const Join = async (guildMember, client) => {
     console.error(error);
   }
 };
-
-// console.log(member.user);
-
-// let name = member.user.username;
-
-// // Bikin canvas
-// const canvas = Canvas.createCanvas(960, 540);
-// const context = canvas.getContext("2d");
-
-// // Masukin background
-// const backgroundFile = await readFile("./wallpaper.jpg");
-// const background = new Canvas.Image();
-// background.src = backgroundFile;
-
-// // Simpen gambar sesuai ukuran canvas
-// context.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-// if (name.length > 15) name = name.slice(0, 15) + "...";
-
-// // Set fonts
-// context.strokeStyle = "rgb(35, 150, 200)";
-// context.fillStyle = "rgb(255, 255, 255)";
-
-// // Draw text
-// drawMultilineText(context, `Welcome, \n ${name} \n Enjoy your stay!`, {
-//   rect: {
-//     x: 75,
-//     y: 90,
-//     width: 615,
-//     height: 404,
-//   },
-//   font: "Bebas Neue",
-//   verbose: false,
-//   lineHeight: 1,
-//   minFontSize: 100,
-//   maxFontSize: 100,
-//   fillStroke: true,
-// });
-
-// // Use the helpful Attachment class structure to process the file for you
-// const attachment = new MessageAttachment(
-//   canvas.toBuffer("image/png"),
-//   "welcome.png"
-// );
-
-// const welcomeEmbed = new MessageEmbed()
-//   .setColor("#07C966")
-//   .setTitle(`Halo ${member.user.username}!`)
-//   .setDescription(
-//     `Selamat datang di server discord\n**SITCOM** (Student IT Community)\n\nDiharapkan untuk membaca **Peraturan** di <#902006311967928411> terlebih dahulu!\n\nDilanjutkan ke <#902096654444920872> untuk berkenalan sesuai format.\n\nJika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__`
-//   )
-//   .setImage("attachment://welcome.png")
-//   .setTimestamp()
-//   .setFooter({
-//     text: `${member.user.username}`,
-//     iconURL: `${member.user.displayAvatarURL()}`,
-//   });
-
-// member.guild.channels.cache.get("902004102974828606").send({
-//   content: `Selamat datang ${member.user}!`,
-//   embeds: [welcomeEmbed],
-//   files: [attachment],
-// });
-// },
 
 async function createBanner(nama) {
   try {
