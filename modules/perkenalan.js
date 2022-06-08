@@ -82,11 +82,26 @@ const Perkenalan = async (msg, client) => {
 
       const kelas = data.kelas.toUpperCase();
 
-      if (kelas.at(0) == "X" && kelas.at(1) == "I" && kelas.at(2) == "I") {
+      if (
+        kelas.at(0) == "X" &&
+        kelas.at(1) == "I" &&
+        kelas.at(2) == "I" &&
+        kelas.at(3) != "I"
+      ) {
         await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS12]);
-      } else if (kelas.at(0) == "X" && kelas.at(1) == "I") {
+      } else if (
+        kelas.at(0) == "X" &&
+        kelas.at(1) == "I" &&
+        kelas.at(2) != "I" &&
+        kelas.at(3) != "I"
+      ) {
         await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS11]);
-      } else if (kelas.at(0) == "X") {
+      } else if (
+        kelas.at(0) == "X" &&
+        kelas.at(1) != "I" &&
+        kelas.at(2) != "I" &&
+        kelas.at(3) != "I"
+      ) {
         await msg.member.roles.add([ROLES_MEMBER, ROLES_KELAS10]);
       } else {
         deleteMsg();
