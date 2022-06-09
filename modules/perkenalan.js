@@ -177,7 +177,7 @@ const Join = async (guildMember, client) => {
     messages += `Jika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__\n`;
 
     const embed = new MessageEmbed()
-      .setColor("#07C966")
+      .setColor("#43E97B")
       .setTitle(`Hallo, ${username}`)
       .setDescription(messages)
       .setThumbnail(guildMember.avatarURL())
@@ -213,12 +213,12 @@ async function createBanner(nama) {
 
     // Set fonts
     ctx.strokeStyle = "rgb(35, 150, 200)";
-    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.fillStyle = "rgb(67, 233, 123)";
 
     if (nama.length > 15) nama = nama.slice(0, 15) + "...";
 
     // Draw text
-    drawMultilineText(ctx, `Welcome, \n ${nama} \n Enjoy your stay!`, {
+    drawMultilineText(ctx, `Welcome\n${nama}\nEnjoy your stay!`, {
       rect: {
         x: 75,
         y: 90,
