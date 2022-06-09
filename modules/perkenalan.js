@@ -34,6 +34,10 @@ const Perkenalan = async (msg, client) => {
       content: `<@${user.id}> , kamu sudah berkenalan!`,
       allowedMentions: { users: [user.id] },
     };
+    const higherRoleMsg = {
+      content: `<@${user.id}> , role kamu lebih tinggi dari punyaku!`,
+      allowedMentions: { users: [user.id] },
+    };
     const replyMsg = {
       content: `Terima kasih <@${user.id}> sudah memperkenalkan diri sesuai format, salam kenal ya!`,
       allowedMentions: { users: [user.id] },
@@ -91,6 +95,28 @@ const Perkenalan = async (msg, client) => {
         sendTempMsg(msg.channel, wrongFormatMsg);
         return;
       }
+
+      // Check ADMINISTRATOR permissions
+      if (!msg.guild.me.permissions.missing("ADMINISTRATOR")) {
+        deleteMsg(msg);
+        sendTempMsg(msg.channel, "Tidak ada akses **ADMINISTRATOR**!");
+        return;
+      }
+
+      // Check Higher roles (Ketua, Wakil, Sekretaris)
+      if (
+        user.id === msg.guild.ownerID ||
+        msg.member.permissions.has("902100811759366164") ||
+        msg.member.permissions.has("902101353386610688") ||
+        msg.member.permissions.has("902101401948266536")
+      ) {
+        deleteMsg(msg);
+        sendTempMsg(msg.channel, higherRoleMsg);
+        return;
+      }
+
+      // Change user nickname
+      await msg.member.setNickname(data.nama);
 
       const kelas = data.kelas.toUpperCase();
 
