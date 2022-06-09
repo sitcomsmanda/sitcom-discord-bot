@@ -137,27 +137,6 @@ const Perkenalan = async (msg, client) => {
   }
 };
 
-const submitData = async (data) => {
-  try {
-    const formData = new FormData();
-    for (const prop in data) {
-      formData.append(prop, data[prop]);
-    }
-    axios({
-      method: "POST",
-      url: GS_SCRIPT_URL,
-      headers: {
-        "Content-Type": `multipart/form-data; boundary=${formData.getBoundary()}`,
-      },
-      data: formData,
-    })
-      .then(() => console.log("Success!", data))
-      .catch((error) => console.error("Error!", error.message));
-  } catch (error) {
-    console.error(error);
-  }
-};
-
 const Join = async (guildMember, client) => {
   try {
     const username = guildMember.user.username;
@@ -173,7 +152,7 @@ const Join = async (guildMember, client) => {
     messages += `\n`;
     messages += `Lalu ke <#902096654444920872> untuk berkenalan **sesuai format**.\n`;
     messages += `\n`;
-    messages += `Jika ada pertanyaan, jangan malu untuk bertanya kepada __Ketua__\n`;
+    messages += `Jika ada pertanyaan, jangan sungkan untuk bertanya kepada __Ketua__\n`;
 
     const embed = new MessageEmbed()
       .setColor("#43E97B")
@@ -214,19 +193,21 @@ async function createBanner(nama) {
     ctx.strokeStyle = "rgb(35, 150, 200)";
     ctx.fillStyle = "rgb(67, 233, 123)";
 
-    if (nama.length > 15) nama = nama.slice(0, 15) + "...";
+    if (nama.length > 10) {
+      nama = nama.slice(0, 10) + "...";
+    }
 
     // Draw text
     drawMultilineText(ctx, `Welcome\n${nama}\nEnjoy your stay!`, {
       rect: {
         x: 75,
-        y: 90,
+        y: 55,
         width: 615,
         height: 540,
       },
       font: "Fredoka One",
       verbose: false,
-      lineHeight: 1,
+      lineHeight: 1.2,
       minFontSize: 100,
       maxFontSize: 100,
       fillStroke: true,
@@ -340,6 +321,27 @@ function drawMultilineText(ctx, text, opts) {
     console.error(error);
   }
 }
+
+const submitData = async (data) => {
+  try {
+    const formData = new FormData();
+    for (const prop in data) {
+      formData.append(prop, data[prop]);
+    }
+    axios({
+      method: "POST",
+      url: GS_SCRIPT_URL,
+      headers: {
+        "Content-Type": `multipart/form-data; boundary=${formData.getBoundary()}`,
+      },
+      data: formData,
+    })
+      .then(() => console.log("Success!", data))
+      .catch((error) => console.error("Error!", error.message));
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 module.exports = {
   Join,
