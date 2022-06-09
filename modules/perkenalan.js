@@ -1,5 +1,4 @@
 const path = require("path");
-const { URLSearchParams } = require("url");
 const axios = require("axios");
 const FormData = require("form-data");
 
@@ -15,8 +14,8 @@ const ROLES_KELAS12 = process.env.ROLES_KELAS12;
 const ROLES_MEMBER = process.env.ROLES_MEMBER;
 const GS_SCRIPT_URL = process.env.GS_SCRIPT_URL;
 
-const fontPath = path.resolve("./assets/fonts/BebasNeue-Regular.ttf");
-registerFont(fontPath, { family: "Bebas Neue", weight: 400 });
+const fontPath = path.resolve("./assets/fonts/FredokaOne-Regular.ttf");
+registerFont(fontPath, { family: "Fredoka One", weight: 400 });
 
 const Perkenalan = async (msg, client) => {
   try {
