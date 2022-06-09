@@ -224,7 +224,7 @@ async function createBanner(nama) {
         width: 615,
         height: 540,
       },
-      font: "Bebas Neue",
+      font: "Fredoka One",
       verbose: false,
       lineHeight: 1,
       minFontSize: 100,
