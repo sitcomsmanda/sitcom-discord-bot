@@ -49,19 +49,9 @@ module.exports = {
       });
     }
 
-    message.channel.send({
-      content: `🔎 Mencari musik...`,
+    return client.distube.play(voiceChannel, query, {
+      textChannel: channel,
+      member: member,
     });
-
-    return client.distube
-      .play(voiceChannel, query, {
-        textChannel: channel,
-        member: member,
-      })
-      .then(() => {
-        message.channel.lastMessage.edit({
-          content: `.`,
-        });
-      });
   },
 };
