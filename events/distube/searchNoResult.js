@@ -7,7 +7,9 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("YELLOW")
-          .setDescription(`🟡 | No result found for \`${query}\`!`),
+          .setDescription(
+            `🟡 | Tidak ada hasil yang ditemukan untuk \`${query}\`!`
+          ),
       ],
     });
   },
