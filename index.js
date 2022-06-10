@@ -111,14 +111,10 @@ const main = async () => {
   /**
    *! MEMBACA DIREKTORI ./events/distube (EVENTS HANDLER)
    **/
-  handleFiles("events").forEach((event) => {
-    if (event.once) {
-      // Jika tipe event adalah once
-      client.once(event.name, (...args) => event.execute(...args));
-    } else {
-      // Jika tipe event adalah on
-      client.on(event.name, (...args) => event.execute(...args));
-    }
+  handleFiles("events/distube").forEach((distubeEvent) => {
+    client.distube.on(distubeEvent.name, (...args) =>
+      distubeEvent.execute(...args)
+    );
   });
 
   await client.login(TOKEN);
