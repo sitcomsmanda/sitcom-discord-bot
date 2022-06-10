@@ -8,7 +8,7 @@ module.exports = {
         new MessageEmbed()
           .setColor("RED")
           .setDescription(
-            `🚫 | An error encountered: ${e.toString().slice(0, 1974)}`
+            `🚫 | Ada kesalahan sistem: ${e.toString().slice(0, 1974)}`
           ),
       ],
     });
