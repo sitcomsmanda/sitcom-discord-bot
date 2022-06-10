@@ -35,29 +35,6 @@ const deploy_commands = async () => {
     console.error(error);
     return false;
   }
-
-  // jika dalam mode development (pengembangan)
-  // if (mode === "build") {
-  //   // Request .put() dengan opsi input commands di global
-  //   await rest
-  //     .put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
-  //       body: commands,
-  //     })
-  //     .then(() =>
-  //       console.log("Successfully registered application commands globally.")
-  //     )
-  //     .catch(console.error);
-  // } else {
-  //   // Request .put() dengan opsi input commands di local server discord
-  //   await rest
-  //     .put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
-  //       body: commands,
-  //     })
-  //     .then(() =>
-  //       console.log("Successfully registered application commands locally.")
-  //     )
-  //     .catch(console.error);
-  // }
 };
 
 deploy_commands();
