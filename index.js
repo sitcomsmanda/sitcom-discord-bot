@@ -109,7 +109,7 @@ const main = async () => {
   client.distube = new DisTube(client, distubeOptions);
 
   /**
-   *! MEMBACA DIREKTORI ./events/distube (EVENTS HANDLER)
+   *! MEMBACA DIREKTORI ./events/distube (DisTube Events Handler)
    **/
   handleFiles("events/distube").forEach((distubeEvent) => {
     client.distube.on(distubeEvent.name, (...args) =>
@@ -123,5 +123,5 @@ const main = async () => {
 try {
   main();
 } catch (error) {
-  console.error;
+  console.error(error);
 }
