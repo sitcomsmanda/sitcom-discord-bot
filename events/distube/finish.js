@@ -7,7 +7,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("#43E97B")
-          .setDescription("Antrean kosong, selesai memutar musik!"),
+          .setDescription("✅ | Antrean kosong, selesai memutar musik!"),
       ],
     });
   },
