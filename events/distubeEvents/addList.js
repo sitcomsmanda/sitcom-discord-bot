@@ -7,7 +7,7 @@ module.exports = {
     await queue.textChannel.send({
       embeds: [
         new MessageEmbed()
-          .setColor("GREEN")
+          .setColor("#43E97B")
           .setDescription(
             `🟢 | Added \`${playlist.name}\` playlist (${
               playlist.songs.length
