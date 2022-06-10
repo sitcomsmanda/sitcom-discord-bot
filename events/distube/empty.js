@@ -7,7 +7,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("LIGHT_GREY")
-          .setDescription("Voice channel is empty! Leaving the channel..."),
+          .setDescription("🏃 | Keluar dari channel karena sepi..."),
       ],
     });
   },
