@@ -46,7 +46,9 @@ module.exports = {
 
     return message.channel.send({
       embeds: [
-        new MessageEmbed().setColor("GREY").setDescription(`${listSongs}`),
+        new MessageEmbed()
+          .setColor("LIGHT_GREY")
+          .setDescription(`${listSongs}`),
       ],
     });
   },

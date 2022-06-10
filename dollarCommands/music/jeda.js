@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const { bold } = require("@discordjs/builders");
 
 module.exports = {
   data: {
@@ -57,7 +56,7 @@ module.exports = {
       embeds: [
         new MessageEmbed()
           .setColor("#07C966")
-          .setDescription(`⏸️ | ${bold(song.name)}`),
+          .setDescription(`⏸️ | ${song.name}`),
       ],
     });
   },
