@@ -9,9 +9,9 @@ module.exports = {
         new MessageEmbed()
           .setColor("#43E97B")
           .setDescription(
-            `🎶 | Playing \`${song.name}\` - \`${
+            `▶️ | Memutar \`${song.name}\` - \`${
               song.formattedDuration
-            }\`\nRequested by: ${song.user}\n${status(queue)}`
+            }\`\nDiminta oleh: ${song.user}\n${status(queue)}`
           ),
       ],
     });

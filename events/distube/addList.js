@@ -6,13 +6,12 @@ module.exports = {
   async execute(queue, playlist) {
     await queue.textChannel.send({
       embeds: [
-        new MessageEmbed()
-          .setColor("#43E97B")
-          .setDescription(
-            `🟢 | Added \`${playlist.name}\` playlist (${
-              playlist.songs.length
-            } songs) to queue\n${status(queue)}`
-          ),
+        new MessageEmbed().setColor("#43E97B").setDescription(
+          `↩️ | Memasukan daftar putar
+             \`${playlist.name}\` (${
+            playlist.songs.length
+          } songs) ke antrean\n${status(queue)}`
+        ),
       ],
     });
   },

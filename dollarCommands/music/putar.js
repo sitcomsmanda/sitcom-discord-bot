@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const { bold } = require("@discordjs/builders");
 
 module.exports = {
   data: {
@@ -60,29 +59,9 @@ module.exports = {
         member: member,
       })
       .then(() => {
-        const songsCount = client.distube.getQueue(voiceChannel).songs.length;
-        const song = client.distube
-          .getQueue(voiceChannel)
-          .songs.at(songsCount - 1);
-        if (songsCount <= 1) {
-          message.channel.lastMessage.edit({
-            content: `.`,
-            embeds: [
-              new MessageEmbed()
-                .setColor("#07C966")
-                .setDescription(`▶️ | ${bold(`1. ${song.name}`)}`),
-            ],
-          });
-        } else {
-          message.channel.lastMessage.edit({
-            content: `.`,
-            embeds: [
-              new MessageEmbed()
-                .setColor("#07C966")
-                .setDescription(`↩️ | ${bold(`${songsCount}. ${song.name}`)}`),
-            ],
-          });
-        }
+        message.channel.lastMessage.edit({
+          content: `.`,
+        });
       });
   },
 };
