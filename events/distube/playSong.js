@@ -9,7 +9,7 @@ module.exports = {
         new MessageEmbed()
           .setColor("#43E97B")
           .setDescription(
-            `▶️ | Memutar \`${song.name}\` - \`${song.formattedDuration}\`\n\nDiputar oleh: ${song.user}\n`
+            `▶️ | Memutar \`${song.name}\` - \`${song.formattedDuration}\`\n\nDiputar oleh: ${song.user}`
           ),
       ],
     });
