@@ -9,7 +9,7 @@ module.exports = {
     await queue.textChannel.send({
       embeds: [
         new MessageEmbed()
-          .setColor("#07C966")
+          .setColor("#43E97B")
           .setDescription(
             `🎶 | Playing \`${song.name}\` - \`${
               song.formattedDuration

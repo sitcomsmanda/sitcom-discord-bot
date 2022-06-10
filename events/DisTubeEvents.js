@@ -1,17 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const client = require("../index.js");
 
-const status = (queue) =>
-  `Volume: \`${queue.volume}%\` | Filter: \`${
-    queue.filters.join(", ") || "Off"
-  }\` | Loop: \`${
-    queue.repeatMode
-      ? queue.repeatMode === 2
-        ? "All Queue"
-        : "This Song"
-      : "Off"
-  }\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
-
 try {
   client.distube
     .on("playSong", (queue, song) =>
