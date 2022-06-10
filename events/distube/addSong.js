@@ -8,7 +8,7 @@ module.exports = {
         new MessageEmbed()
           .setColor("#43E97B")
           .setDescription(
-            `🟢 | Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
+            `↩️ | Memasukan ${song.name} - \`${song.formattedDuration}\` ke antrean oleh ${song.user}`
           ),
       ],
     });
