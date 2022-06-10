@@ -40,15 +40,13 @@ module.exports = {
 
     message.channel.send({
       embeds: [
-        new MessageEmbed().setColor("#07C966").setDescription(`${status}`),
+        new MessageEmbed().setColor("LIGHT_GREY").setDescription(`${status}`),
       ],
     });
 
     return message.channel.send({
       embeds: [
-        new MessageEmbed()
-          .setColor("LIGHT_GREY")
-          .setDescription(`${listSongs}`),
+        new MessageEmbed().setColor("#43E97B").setDescription(`${listSongs}`),
       ],
     });
   },

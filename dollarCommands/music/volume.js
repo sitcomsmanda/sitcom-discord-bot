@@ -31,9 +31,9 @@ module.exports = {
       return message.channel.send({
         embeds: [
           new MessageEmbed()
-            .setColor("#07C966")
+            .setColor("YELLOW")
             .setDescription(
-              `Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
+              `❗ | Aku sedang memutar musik di <#${guild.me.voice.channelId}>.`
             ),
         ],
       });
@@ -70,7 +70,7 @@ module.exports = {
     return message.channel.send({
       embeds: [
         new MessageEmbed()
-          .setColor("#07C966")
+          .setColor("#43E97B")
           .setDescription(`📶 | Volume telah diubah menjadi \`${volume}%\``),
       ],
     });

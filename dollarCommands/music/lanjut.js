@@ -55,7 +55,7 @@ module.exports = {
     return message.channel.send({
       embeds: [
         new MessageEmbed()
-          .setColor("#07C966")
+          .setColor("#43E97B")
           .setDescription(`▶️ | ${song.name}`),
       ],
     });
