@@ -108,7 +108,18 @@ const main = async () => {
 
   client.distube = new DisTube(client, distubeOptions);
 
-  module.exports = client;
+  /**
+   *! MEMBACA DIREKTORI ./events/distube (EVENTS HANDLER)
+   **/
+  handleFiles("events").forEach((event) => {
+    if (event.once) {
+      // Jika tipe event adalah once
+      client.once(event.name, (...args) => event.execute(...args));
+    } else {
+      // Jika tipe event adalah on
+      client.on(event.name, (...args) => event.execute(...args));
+    }
+  });
 
   await client.login(TOKEN);
 };
