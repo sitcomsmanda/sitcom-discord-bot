@@ -5,9 +5,9 @@ module.exports = {
   name: "guildMemberRemove",
   // Method isi Event guildMemberRemove
   async execute(member) {
-    console.log(member.guild.channels);
+    const lobbyCh = "902004102974828606";
     member.guild.channels.cache
-      .get("902004102974828606")
+      .get(lobbyCh)
       .send(`Selamat tinggal ${member.user}!`);
   },
 };
