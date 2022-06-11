@@ -9,13 +9,12 @@ const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 const { YtDlpPlugin } = require("@distube/yt-dlp");
 
-// Memasukan Functions
+// Memasukan handleFiles Functions
 const handleFiles = require("./modules/handleFiles.js");
 
-// Memasukan config file yang berisi token
+// Memasukan config file ke masing-masing konstanta
 const TOKEN = process.env.TOKEN;
 const PREFIX = process.env.PREFIX;
-const SITCOM_GUILD_ID = process.env.SITCOM_GUILD_ID;
 const CLIENT_ID_SPOTIFY = process.env.CLIENT_ID_SPOTIFY;
 const CLIENT_SECRET_SPOTIFY = process.env.CLIENT_SECRET_SPOTIFY;
 
@@ -42,8 +41,6 @@ const main = async () => {
 
   // Membuat property prefix untuk diakses di file lain
   client.prefix = PREFIX;
-  // Membuat property sitcom guild id untuk diakses di file lain
-  client.sitcomGuildId = SITCOM_GUILD_ID;
   // Membuat property slashCommands
   client.slashCommands = new Discord.Collection();
   // Membuat property messageCommands
