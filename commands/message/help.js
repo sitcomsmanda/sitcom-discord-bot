@@ -35,7 +35,7 @@ const makeIndent = (commands) => {
 module.exports = {
   data: {
     name: "help",
-    desc: "rentetan perintah dolar",
+    desc: "rentetan perintah",
   },
   async execute(message) {
     const messageCommands = message.client.messageCommands;
