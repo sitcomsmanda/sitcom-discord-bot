@@ -41,33 +41,33 @@ const main = async () => {
 
   // Membuat property commands yang isinya object Collection
   client.prefix = PREFIX;
-  // Membuat property commands yang isinya object Collection
-  client.commands = new Discord.Collection();
-  // Membuat property dollarCommands yang isinya object Collection
-  client.dollarCommands = new Discord.Collection();
+  // Membuat property slashCommands yang isinya object Collection
+  client.slashCommands = new Discord.Collection();
+  // Membuat property messageCommands yang isinya object Collection
+  client.messageCommands = new Discord.Collection();
   // Membuat property musicCommands yang isinya object Collection
   client.musicCommands = new Discord.Collection();
 
   /**
-   *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
+   *! MEMBACA DIREKTORI ./commands/slash (Slash Commands)
    **/
-  handleFiles("commands").forEach((command) => {
-    client.commands.set(command.data.name, command);
+  handleFiles("commands/slash").forEach((command) => {
+    client.slashCommands.set(command.data.name, command);
   });
 
   /**
-   *! MEMBACA DIREKTORI ./dollarCommands (DOLLAR COMMANDS HANDLER)
+   *! MEMBACA DIREKTORI ./commands/message (Message Commands)
    **/
-  handleFiles("dollarCommands").forEach((dollarCommand) => {
-    const commandName = dollarCommand.data.name;
-    dollarCommand.data.name = PREFIX + commandName;
-    client.dollarCommands.set(dollarCommand.data.name, dollarCommand);
+  handleFiles("commands/message").forEach((messageCommand) => {
+    const commandName = messageCommand.data.name;
+    messageCommand.data.name = PREFIX + commandName;
+    client.messageCommands.set(messageCommand.data.name, messageCommand);
   });
 
   /**
-   *! MEMBACA DIREKTORI ./dollarCommands/music (MUSIC COMMANDS HANDLER)
+   *! MEMBACA DIREKTORI ./commands/music (MUSIC COMMANDS HANDLER)
    **/
-  handleFiles("dollarCommands/music").forEach((musicCommand) => {
+  handleFiles("commands/music").forEach((musicCommand) => {
     const commandName = musicCommand.data.name;
     musicCommand.data.name = PREFIX + commandName;
     client.musicCommands.set(musicCommand.data.name, musicCommand);
