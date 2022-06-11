@@ -1,4 +1,4 @@
-const { Join } = require("../modules/perkenalan.js");
+const { Join } = require("../../modules/perkenalan.js");
 
 // Distribusi module events dengan nama event "guildMemberAdd"
 // Yaitu ketika ada member masuk server
