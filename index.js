@@ -4,8 +4,14 @@ require("dotenv").config();
 // Memasukan Discord Module/Package
 const Discord = require("discord.js");
 
+// Memasukan DisTube Music Bot Module/Package
+const { DisTube } = require("distube");
+const { SpotifyPlugin } = require("@distube/spotify");
+const { YtDlpPlugin } = require("@distube/yt-dlp");
+
 // Memasukan Functions
 const handleFiles = require("./modules/handleFiles.js");
+
 // Memasukan config file yang berisi token
 const TOKEN = process.env.TOKEN;
 const PREFIX = process.env.PREFIX;
@@ -68,9 +74,9 @@ const main = async () => {
   });
 
   /**
-   *! MEMBACA DIREKTORI ./events (EVENTS HANDLER)
+   *! MEMBACA DIREKTORI ./events/discord (Discord Events Handler)
    **/
-  handleFiles("events").forEach((event) => {
+  handleFiles("events/discord ").forEach((event) => {
     if (event.once) {
       // Jika tipe event adalah once
       client.once(event.name, (...args) => event.execute(...args));
@@ -80,13 +86,7 @@ const main = async () => {
     }
   });
 
-  /**
-   *! DisTube Init
-   **/
-  const { DisTube } = require("distube");
-  const { SpotifyPlugin } = require("@distube/spotify");
-  const { YtDlpPlugin } = require("@distube/yt-dlp");
-
+  // Opsi DisTube
   const distubeOptions = {
     youtubeDL: false,
     updateYouTubeDL: false,
