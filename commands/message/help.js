@@ -38,12 +38,12 @@ module.exports = {
     desc: "rentetan perintah dolar",
   },
   async execute(message) {
-    const dollarCommands = message.client.dollarCommands;
+    const messageCommands = message.client.messageCommands;
     const musicCommands = message.client.musicCommands;
     let description = "";
 
     description += `\n**Perintah Biasa**\n`;
-    description += makeIndent(dollarCommands);
+    description += makeIndent(messageCommands);
     description += `\n**Perintah Musik**\n`;
     description += makeIndent(musicCommands);
 
