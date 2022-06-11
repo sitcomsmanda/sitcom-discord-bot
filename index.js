@@ -76,7 +76,7 @@ const main = async () => {
   /**
    *! MEMBACA DIREKTORI ./events/discord (Discord Events Handler)
    **/
-  handleFiles("events/discord ").forEach((event) => {
+  handleFiles("events/discord").forEach((event) => {
     if (event.once) {
       // Jika tipe event adalah once
       client.once(event.name, (...args) => event.execute(...args));
