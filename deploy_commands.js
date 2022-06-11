@@ -15,9 +15,9 @@ const deploy_commands = async () => {
   const commands = [];
 
   /**
-   *! MEMBACA DIREKTORI ./commands (COMMANDS HANDLER)
+   *! MEMBACA DIREKTORI ./commands/slash (Slash Commands)
    **/
-  handleFiles("commands").forEach((command) => {
+  handleFiles("commands/slash").forEach((command) => {
     commands.push(command.data.toJSON());
   });
 
