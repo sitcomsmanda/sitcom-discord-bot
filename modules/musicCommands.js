@@ -10,8 +10,8 @@ const cleanMessage = (oldContent) => {
   return newContents;
 };
 
-// Fungsi Dolar Utama yang dipanggil di messageCreate Event
-const handleMusicCommands = async (message) => {
+// Fungsi Music Commands yang dipanggil di messageCreate Event
+const musicCommands = async (message) => {
   const { client } = message;
 
   // Pencegah masuk function tanpa PREFIX
@@ -37,4 +37,4 @@ const handleMusicCommands = async (message) => {
   return;
 };
 
-module.exports = handleMusicCommands;
+module.exports = musicCommands;
