@@ -4,7 +4,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   data: {
     name: "ping",
-    desc: "melihat latensi kamu",
+    desc: "melihat latensi",
   },
   async execute(message) {
     const embed = new MessageEmbed()
@@ -13,7 +13,7 @@ module.exports = {
 
     await message.channel.send({ embeds: [embed] }).then((msg) => {
       const ping = msg.createdTimestamp - message.createdTimestamp;
-      if (ping < 100) {
+      if (ping < 150) {
         const embed2 = new MessageEmbed()
           .setTitle(`${ping} ms`)
           .setColor("GREEN");
