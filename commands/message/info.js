@@ -5,11 +5,10 @@ const packages = require("../../package.json");
 module.exports = {
   data: {
     name: "info",
-    desc: "riwayat akun bot",
+    desc: "status akun bot",
   },
   async execute(message) {
     const client = await message.client;
-    // const user = await message.author;
 
     // Miliseconds to Seconds
     const uptime = Math.floor(client.uptime / 1000);
