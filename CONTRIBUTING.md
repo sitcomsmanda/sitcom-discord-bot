@@ -1,11 +1,7 @@
 # Peraturan dan Pedoman Kontribusi
 
-## Navigasi
-
--   [link][pesan commit]
-    [pesan commit]: #pesan-commit
--   [link][panduan bagi teman-teman sitcom]
-    [panduan bagi teman-teman sitcom]: #panduan-bagi-teman-teman-sitcom
+-   [Pesan Commit](#pesan-commit)
+-   [Panduan Bagi Teman-Teman SITCOM](#panduan-bagi-teman-teman-sitcom)
 
 ## Pesan Commit
 
@@ -16,20 +12,19 @@ Diharapkan untuk menulis pesan commit dengan format berikut:
 -   `fix:` jika ingin memperbaiki sesuatu
 -   `rm:` jika ingin menghapus sesuatu
 
-[link][🔝]
-[🔝]: #peraturan-dan-pedoman-kontribusi
+[Back to Top](#peraturan-dan-pedoman-kontribusi)
 
 ## Panduan Bagi Teman-Teman SITCOM
 
 Rentetan materi yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan discord.js
 
-| Materi                               | Sumber |
-| ------------------------------------ | ------ |
-| `Sintaks JavaScript Dasar`           | ...    |
-| `Sintaks Ecma Script 6 (Js Terbaru)` | ...    |
-| `Konsep REST API`                    | ...    |
-| `Penggunaan Git dan Github`          | ...    |
-| `Mengenal NodeJS`                    | ...    |
+| Materi                             | Sumber |
+| ---------------------------------- | ------ |
+| Sintaks JavaScript Dasar           | ...    |
+| Sintaks Ecma Script 6 (Js Terbaru) | ...    |
+| Konsep REST API                    | ...    |
+| Mengenal Git dan Github            | ...    |
+| Mengenal NodeJS dan NPM            | ...    |
+| Mengenal Discord.js                | ...    |
 
-[link][🔝]
-[🔝]: #peraturan-dan-pedoman-kontribusi
+[Back to Top](#peraturan-dan-pedoman-kontribusi)
