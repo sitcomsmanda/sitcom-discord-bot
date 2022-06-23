@@ -22,11 +22,12 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
     <thead>
         <tr>
             <th rowspan="2">Pelajari Topik</th>
-            <th colspan="2">Sumber Belajar</th>
+            <th colspan="3">Sumber Belajar</th>
         </tr>
         <tr>
             <th>Indonesia</th>
             <th>Internasional</th>
+            <th>Dokumentasi</th>
         </tr>
     </thead>
     <tbody>
@@ -34,9 +35,11 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>JavaScript Dasar</td>
             <td>...</td>
             <td>...</td>
+            <td>...</td>
         </tr>
         <tr>
             <td>Ecma Script 6 (Js Terbaru)</td>
+            <td>...</td>
             <td>...</td>
             <td>...</td>
         </tr>
@@ -44,9 +47,11 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>Konsep REST API</td>
             <td>...</td>
             <td>...</td>
+            <td>...</td>
         </tr>
         <tr>
             <td>Git dan Github</td>
+            <td>...</td>
             <td>...</td>
             <td>...</td>
         </tr>
@@ -54,9 +59,11 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>NodeJS dan NPM</td>
             <td>...</td>
             <td>...</td>
+            <td>...</td>
         </tr>
         <tr>
             <td>Library Discord.js</td>
+            <td>...</td>
             <td>...</td>
             <td>...</td>
         </tr>
