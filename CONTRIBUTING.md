@@ -3,6 +3,7 @@
 - [Peraturan dan Pedoman Kontribusi](#peraturan-dan-pedoman-kontribusi)
   - [Pesan Commit](#pesan-commit)
   - [Panduan Bagi Teman-Teman SITCOM](#panduan-bagi-teman-teman-sitcom)
+  - [Panduan Klon _Repo_](#panduan-klon-repo)
 
 ## Pesan Commit
 
@@ -98,5 +99,25 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
         </tr>
     </tbody>
 </table>
+
+## Panduan Klon _Repo_
+
+1. Buka _console_ dan ikuti perintah `git` berikut.
+
+```sh
+git clone https://github.com/sitcomsmanda/sitcom-discord-bot.git
+```
+
+2. Lalu, _install_ semua `packages` yang diperlukan.
+
+```sh
+npm i
+```
+
+3. _Repo_ telah selesai di klon ke mesin lokal, coba tes dengan perintah berikut.
+
+```sh
+npm run dev
+```
 
 [Back to Top](#peraturan-dan-pedoman-kontribusi)
