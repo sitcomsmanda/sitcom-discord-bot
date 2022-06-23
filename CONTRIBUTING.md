@@ -1,22 +1,25 @@
 # Peraturan dan Pedoman Kontribusi
 
--   [Pesan Commit](#pesan-commit)
--   [Panduan Bagi Teman-Teman SITCOM](#panduan-bagi-teman-teman-sitcom)
+- [Peraturan dan Pedoman Kontribusi](#peraturan-dan-pedoman-kontribusi)
+  - [Pesan Commit](#pesan-commit)
+  - [Panduan Bagi Teman-Teman SITCOM](#panduan-bagi-teman-teman-sitcom)
 
 ## Pesan Commit
 
-Diharapkan untuk menulis pesan commit dengan format berikut:
+Diharapkan untuk menulis pesan commit dengan format berikut.
 
--   `add:` jika ingin menambah sesuatu
--   `change:` jika ingin merubah sesuatu
--   `fix:` jika ingin memperbaiki sesuatu
--   `rm:` jika ingin menghapus sesuatu
+| Format    | Keterangan                     |
+| --------- | ------------------------------ |
+| `add:`    | jika ingin menambah sesuatu    |
+| `change:` | jika ingin merubah sesuatu     |
+| `fix:`    | jika ingin memperbaiki sesuatu |
+| `rm:`     | jika ingin menghapus sesuatu   |
 
 [Back to Top](#peraturan-dan-pedoman-kontribusi)
 
 ## Panduan Bagi Teman-Teman SITCOM
 
-Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan discord.js
+Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan `discord.js`.
 
 <table>
     <thead>
@@ -35,7 +38,7 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>JavaScript Dasar</td>
             <td>...</td>
             <td>...</td>
-            <td>...</td>
+            <td><a></a></td>
         </tr>
         <tr>
             <td>Ecma Script 6 (Js Terbaru)</td>
