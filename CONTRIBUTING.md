@@ -16,15 +16,51 @@ Diharapkan untuk menulis pesan commit dengan format berikut:
 
 ## Panduan Bagi Teman-Teman SITCOM
 
-Rentetan materi yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan discord.js
+Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan discord.js
 
-| Materi                             | Sumber |
-| ---------------------------------- | ------ |
-| Sintaks JavaScript Dasar           | ...    |
-| Sintaks Ecma Script 6 (Js Terbaru) | ...    |
-| Konsep REST API                    | ...    |
-| Mengenal Git dan Github            | ...    |
-| Mengenal NodeJS dan NPM            | ...    |
-| Mengenal Discord.js                | ...    |
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Pelajari Topik</th>
+            <th colspan="2">Sumber Belajar</th>
+        </tr>
+        <tr>
+            <th>Indonesia</th>
+            <th>Internasional</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>JavaScript Dasar</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Ecma Script 6 (Js Terbaru)</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Konsep REST API</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Git dan Github</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>NodeJS dan NPM</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Library Discord.js</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+    </tbody>
+</table>
 
 [Back to Top](#peraturan-dan-pedoman-kontribusi)
