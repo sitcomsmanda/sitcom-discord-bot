@@ -108,13 +108,19 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
 git clone https://github.com/sitcomsmanda/sitcom-discord-bot.git
 ```
 
-2. Lalu, _install_ semua `packages` yang diperlukan.
+2. Pindah ke direktori `sitcom-discord-bot`.
+
+```sh
+cd .\sitcom-discord-bot
+```
+
+3. Lalu, _install_ semua `packages` yang diperlukan.
 
 ```sh
 npm i
 ```
 
-3. _Repo_ telah selesai di klon ke mesin lokal, coba tes dengan perintah berikut.
+4. _Repo_ telah selesai di klon ke mesin lokal, coba tes dengan perintah berikut.
 
 ```sh
 npm run dev
