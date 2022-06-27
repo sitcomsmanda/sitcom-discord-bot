@@ -100,6 +100,8 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
     </tbody>
 </table>
 
+[Back to Top](#peraturan-dan-pedoman-kontribusi)
+
 ## Panduan Klon _Repo_
 
 1. Buka _console_ dan ikuti perintah `git` berikut.
