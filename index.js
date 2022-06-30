@@ -48,7 +48,14 @@ const main = async () => {
 		);
 
 		if (!ch) return;
-		await ch.send(msg);
+
+		const embed = new Discord.MessageEmbed()
+			.setColor("DARKER_GREY")
+			.setTitle(`Console:`)
+			.setDescription(msg)
+			.setTimestamp();
+
+		await ch.send({ content: ".", embeds: [embed] });
 	};
 
 	// Membuat property prefix untuk diakses di file lain
