@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 
 // Memasukan DisTube Music Bot Module/Package
 const { DisTube } = require("distube");
-const { SpotifyPlugin } = require("@distube/spotify");
+const SpotifyPlugin = require("@distube/spotify");
 const { YtDlpPlugin } = require("@distube/yt-dlp");
 
 // Memasukan handleFiles Functions
