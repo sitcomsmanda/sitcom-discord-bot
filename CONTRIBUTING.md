@@ -128,4 +128,6 @@ npm i
 npm run dev
 ```
 
+Catatan: isi file `.env` terdapat di folder gdrive `./documents/SITCOM-BOT/.env` akun utama sitcom atau bisa ditanyakan kepada pengelola repo ini. 
+
 [Back to Top](#peraturan-dan-pedoman-kontribusi)
