@@ -21,10 +21,11 @@ Diharapkan untuk menulis pesan commit dengan format berikut.
 ## Panduan Bagi Teman-Teman SITCOM
 
 Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan `discord.js`.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
 
-</iframe>
-
+<div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+  </iframe>  
+</div
 
 <table>
     <thead>
