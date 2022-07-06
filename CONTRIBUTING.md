@@ -22,11 +22,6 @@ Diharapkan untuk menulis pesan commit dengan format berikut.
 
 Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggunakan `discord.js`.
 
-<div>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-  </iframe>  
-</div
-
 <table>
     <thead>
         <tr>
@@ -96,7 +91,8 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
         <tr>
             <td>Library Discord.js</td>
             <td>
-                ...
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+  </iframe>  
             </td>
             <td>
                 <a href="https://discordjs.guide/">DiscordJS Guide</a>
