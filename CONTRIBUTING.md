@@ -56,8 +56,7 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>Konsep REST API</td>
             <td>
                 <a href="https://youtube.com/playlist?list=PLFIM0718LjIW7AsIbnhFg15t9yx4H-sQ0">REST API - YT WPU</a>
-                [Belajar REST API - Programmer Zaman Now](https://youtube.com/playlist?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4)
-              
+                <a href="https://youtube.com/playlist?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4">REST API - YT ProgrammerZamanNow</a>
             </td>
             <td>
                  <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">Wikipedia</a>
