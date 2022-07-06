@@ -56,6 +56,7 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>Konsep REST API</td>
             <td>
                 <a href="https://youtube.com/playlist?list=PLFIM0718LjIW7AsIbnhFg15t9yx4H-sQ0">REST API - YT WPU</a>
+                <br>
                 <a href="https://youtube.com/playlist?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4">REST API - YT ProgrammerZamanNow</a>
             </td>
             <td>
@@ -75,6 +76,8 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>NodeJS Dasar</td>
             <td>
                 <a href="https://youtube.com/playlist?list=PLFIM0718LjIW-XBdVOerYgKegBtD6rSfD">Belajar NodeJS & NPM - YT WPU</a>
+                <br>
+                <a href="https://youtu.be/b39Xqf5iyjo">TUTORIAL NODEJS DASAR - YT ProgrammerZamanNow</a>
             </td>
             <td>
                 <a href="https://nodejs.org/en/docs/">NodeJS Docs</a>
