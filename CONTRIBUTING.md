@@ -56,6 +56,8 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
             <td>Konsep REST API</td>
             <td>
                 <a href="https://youtube.com/playlist?list=PLFIM0718LjIW7AsIbnhFg15t9yx4H-sQ0">REST API - YT WPU</a>
+                [Belajar REST API - Programmer Zaman Now](https://youtube.com/playlist?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4)
+              
             </td>
             <td>
                  <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">Wikipedia</a>
@@ -91,8 +93,7 @@ Rentetan topik yang perlu dipelajari terlebih dahulu sebelum membuat bot menggun
         <tr>
             <td>Library Discord.js</td>
             <td>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL-CtdCApEFH-g0XS7fraWEZ28M8DiykC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-  </iframe>  
+               -
             </td>
             <td>
                 <a href="https://discordjs.guide/">DiscordJS Guide</a>
