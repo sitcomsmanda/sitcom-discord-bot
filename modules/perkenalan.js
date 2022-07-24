@@ -256,7 +256,7 @@ const Join = async (guildMember, client) => {
       embeds: [embed],
       files: [attachment],
     });
-    console.log(`<@${user.id}> has joined the server!`);
+    console.log(`${username} (<@${user.id}>) has joined the server!`);
   } catch (error) {
     console.error(error);
   }
