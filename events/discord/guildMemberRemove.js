@@ -6,9 +6,11 @@ module.exports = {
   // Method isi Event guildMemberRemove
   async execute(member) {
     const lobbyCh = "902004102974828606";
-    member.guild.channels.cache
-      .get(lobbyCh)
-      .send(`Selamat tinggal ${member.user}!`);
+    if (member.guild.channels.cache.has(lobbyCh)) {
+      member.guild.channels.cache
+        .get(lobbyCh)
+        .send(`Selamat tinggal ${member.user}!`);
+    }
   },
 };
 // member.name untuk ngambil nama server

@@ -6,6 +6,7 @@ const { registerFont, loadImage, createCanvas } = require("canvas");
 const { MessageAttachment, MessageEmbed } = require("discord.js");
 const { deleteMsg, sendTempMsg } = require("./utility.js");
 
+const GUILD_ID = process.env.GUILD_ID;
 const CHANNEL_LOBBY = process.env.CHANNEL_LOBBY;
 const CHANNEL_PERKENALAN = process.env.CHANNEL_PERKENALAN;
 const ROLES_KELAS10 = process.env.ROLES_KELAS10;
@@ -216,6 +217,10 @@ const Perkenalan = async (msg, client) => {
 
 const Join = async (guildMember, client) => {
   try {
+    if (!guildMember.guild.channels.cache.has(CHANNEL_LOBBY)) {
+      return;
+    }
+
     const username = guildMember.user.username;
     const user = guildMember.user;
     const imageBuffer = await createBanner(username);
@@ -251,6 +256,7 @@ const Join = async (guildMember, client) => {
       embeds: [embed],
       files: [attachment],
     });
+    console.log(`<@${user.id}> has joined the server!`);
   } catch (error) {
     console.error(error);
   }
