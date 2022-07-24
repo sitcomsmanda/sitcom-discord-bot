@@ -46,10 +46,10 @@ const Perkenalan = async (msg, client) => {
 
     const successMsg = [
       `Terima kasih <@${user.id}> sudah memperkenalkan diri sesuai format, salam kenal ya!`,
-      `Terima kasih <@${user.id}> data sudah lengkap, selamat datang di server SITCOM!`,
-      `<@${user.id}> mantap, terima kasih dan salam kenal ya!`,
-      `Hai <@${user.id}>, selamat datang di server SITCOM. Terima kasih dan semoga aktif terus ya!`,
       `<@${user.id}> sip! Kami tunggu partisipasi dan keaktifannya ya!`,
+      `Terima kasih <@${user.id}> data sudah lengkap, selamat datang di server SITCOM!`,
+      `Hai <@${user.id}>, selamat datang di server SITCOM. Terima kasih dan semoga aktif terus ya!`,
+      `<@${user.id}> mantap, terima kasih dan salam kenal ya!`,
     ];
 
     const replyMsg = {
@@ -198,7 +198,8 @@ const Perkenalan = async (msg, client) => {
 
       // Save to db
       try {
-        // submitData(data);
+        console.log(JSON.stringify(data));
+        submitData(data);
       } catch (error) {
         console.error(error);
       }
