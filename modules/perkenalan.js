@@ -193,6 +193,10 @@ const Perkenalan = async (msg, client) => {
       // Add Reaction
       msg.react("✅");
 
+      console.log(
+        msg.guild.emojis.cache.find((emoji) => emoji.name === "sitcom")
+      );
+
       // Reply
       replyMsg.content = successMsg[Math.floor(Math.random() * (4 - 0) + 0)];
       await msg.channel.send(replyMsg);
@@ -229,8 +233,8 @@ const Join = async (guildMember, client) => {
     const perkenalanCh = await client.channels.fetch(CHANNEL_LOBBY);
     const attachment = new MessageAttachment(imageBuffer, "welcome.png");
 
-    let messages = `Selamat datang di server discord **SITCOM** \n`;
-    messages += `<:sitcom:902367208993349632> (Student Information Technology Community)\n`;
+    let messages = `Selamat datang di server discord <:sitcom:1008188639475421294> **SITCOM** \n`;
+    messages += `(Student Information Technology Community)\n`;
     messages += `\n`;
     messages += `Diharapkan untuk membaca **Peraturan** di <#902006311967928411> terlebih dahulu!\n`;
     messages += `\n`;
