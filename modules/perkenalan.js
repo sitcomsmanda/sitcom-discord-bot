@@ -191,11 +191,15 @@ const Perkenalan = async (msg, client) => {
       }
 
       // Add Reaction
-      msg.react("✅");
-
-      console.log(
-        msg.guild.emojis.cache.find((emoji) => emoji.name === "sitcom")
+      const reactionEmoji = await msg.guild.emojis.cache.find(
+        (emoji) => emoji.name === "charetslight"
       );
+      if (reactionEmoji) {
+        msg.react("✅");
+        msg.react(reactionEmoji);
+      } else {
+        msg.react("✅");
+      }
 
       // Reply
       replyMsg.content = successMsg[Math.floor(Math.random() * (4 - 0) + 0)];
