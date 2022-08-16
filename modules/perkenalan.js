@@ -229,8 +229,8 @@ const Join = async (guildMember, client) => {
     const perkenalanCh = await client.channels.fetch(CHANNEL_LOBBY);
     const attachment = new MessageAttachment(imageBuffer, "welcome.png");
 
-    let messages = `Selamat datang di server discord\n`;
-    messages += `**SITCOM** (Student IT Community)\n`;
+    let messages = `Selamat datang di server discord **SITCOM** \n`;
+    messages += `<:sitcom:902367208993349632> (Student Information Technology Community)\n`;
     messages += `\n`;
     messages += `Diharapkan untuk membaca **Peraturan** di <#902006311967928411> terlebih dahulu!\n`;
     messages += `\n`;
