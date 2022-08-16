@@ -2,4 +2,4 @@ node_modules
 config.json 
 .env
 
-./commands/message/welcome.js
+commands/message/welcome.js
