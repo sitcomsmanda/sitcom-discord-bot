@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/sitcomsmanda/sitcom-discord-bot#readme",
   "engines": {
-    "node": "18.x"
+    "node": "16.x"
   },
   "dependencies": {
     "@discordjs/builders": "^0.13.0",
