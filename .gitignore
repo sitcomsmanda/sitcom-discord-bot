@@ -3,3 +3,4 @@ config.json
 .env
 
 commands/message/welcome.js
+commands/slash/announce.js
