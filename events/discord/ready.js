@@ -1,3 +1,5 @@
+const { arch, platform } = require("node:process");
+
 // Distribusi module events dengan nama event "ready"
 module.exports = {
   // Nama Event: ready
@@ -14,7 +16,7 @@ module.exports = {
       status: status,
     });
     console.log(
-      `SITCOM is ready.\nactivites: "${type} ${activity}", status: ${status}`
+      `SITCOM is ready from ${platform} with ${arch} architecture.\nactivites: "${type} ${activity}", status: ${status}`
     );
   },
 };
