@@ -42,13 +42,33 @@ async function kickTimeout(interaction) {
       msg += `\n- <@${kickedMembers[i].id}>`;
     }
 
-    ch.send(`Users yang belum berkenalan telah di kick!`);
+    ch.send(`Users yang tidak dikenal, telah di kick!`);
     ch.send(msg);
   }, msDelay);
 
   await interaction.reply({
-    content: `Oke!\nSemua Users yang belum berkenalan akan di kick\n${timeString}`,
+    content: `😃 Siap kang/teh laksanakan!\nSemua Users yang belum berkenalan akan di kick\n> ${timeString}\n`,
   });
+}
+
+async function auth(interaction) {
+  const user = interaction.user;
+  const member = interaction.member;
+  const adminId = `1008276566469509200`;
+  const devAdminId = `1011233448117157988`;
+
+  // Check Roles
+  if (
+    user.id === interaction.guild.ownerID ||
+    member.permissions.has(adminId) ||
+    member.permissions.has(devAdminId)
+  ) {
+    kickTimeout(interaction);
+  } else {
+    await interaction.reply({
+      content: `😒 Siapa elu? Nyuruh-nyuruh gue!\n`,
+    });
+  }
 }
 
 // Distribusi module command dengan nama "kicktimeout"
@@ -72,6 +92,6 @@ module.exports = {
         )
     ),
   async execute(interaction) {
-    kickTimeout(interaction);
+    auth(interaction);
   },
 };
