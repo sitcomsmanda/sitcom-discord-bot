@@ -114,7 +114,7 @@ const main = async () => {
     emitAddSongWhenCreatingQueue: false,
     leaveOnFinish: true,
     plugins: [
-      new YtDlpPlugin(),
+      new YtDlpPlugin({ update: true }),
       new SpotifyPlugin({
         parallel: true,
         emitEventsAfterFetching: false,
